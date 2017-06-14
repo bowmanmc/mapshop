@@ -1,15 +1,23 @@
 {
   "name": "mapshop",
-  "version": "1.0.0",
-  "description": "An easy to use map editor",
-  "main": "app/main.js",
-  "scripts": {
-    "start": "electron ."
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "electron": "^1.6.11",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0"
   },
-  "repository": "https://github.com/bowmanmc/mapshop",
-  "author": "Michael Bowman <bowmanmc@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "react-scripts": "1.0.7"
+  },
+  "main": "application.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "preview": "npm-run-all build electron",
+    "electron": "electron .",
+    "eject": "react-scripts eject"
   }
 }
