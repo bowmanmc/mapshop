@@ -3,21 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "electron": "^1.6.11",
-    "npm-run-all": "^4.0.2",
     "react": "^15.6.0",
     "react-dom": "^15.6.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "electron-connect": "^0.6.1",
+    "electron-prebuilt-compile": "^1.6.11"
   },
   "main": "application.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "preview": "npm-run-all build electron",
-    "electron": "electron .",
-    "eject": "react-scripts eject"
+    "start": "electron ."
   }
 }
