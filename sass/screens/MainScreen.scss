@@ -1,5 +1,18 @@
 
 .MainScreen {
     background: $clr-background;
+
+}
+
+// Layout for MainScreen
+.MainScreen {
+    display: flex;
     height: 100%;
+
+    .Preview {
+        flex: 1;
+    }
+    .Sidebar {
+        width: 250px;
+    }
 }
