@@ -1,5 +1,9 @@
 
+$sb-clr-background: $clr-dark;
+$sb-clr-txt: $clr-light;
+
 .Sidebar {
-    background: $clr-sidebar-bg;
-    color: $clr-sidebar-txt;
+    background: $sb-clr-background;
+    box-shadow: $box-shadow;
+    color: $sb-clr-txt;
 }
