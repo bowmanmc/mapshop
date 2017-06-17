@@ -67,7 +67,7 @@ rules:
             style: 1tbs
             allow-single-line: false
     class-name-format:
-        - 1
+        - 0
         -
             allow-leading-underscore: false
             convention: strictbem
