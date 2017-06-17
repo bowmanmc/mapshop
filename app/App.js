@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import MainScreen from './screens/MainScreen';
+import StartScreen from './screens/StartScreen';
 
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <MainScreen />
+                <StartScreen />
             </div>
         );
     }

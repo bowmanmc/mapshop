@@ -1,2 +1,7 @@
 
 $box-shadow: 0 0 7px $clr-black;
+
+@mixin screen() {
+    height: 100%;
+    width: 100%;
+}
