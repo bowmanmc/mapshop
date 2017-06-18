@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import StartScreen from './screens/StartScreen';
+import StartScreen from './screens/Start';
 
 
 class App extends Component {
