@@ -1,0 +1,17 @@
+.StartScreen__Main {
+    flex: 1;
+}
+
+.StartScreen__RecentProjects {
+
+    a {
+        background: $clr-light;
+        border-radius: 5px;
+        box-shadow: 0 0 3px transparent;
+        display: inline-block;
+    }
+
+    ul {
+        list-style: none;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Actions from './Actions';
+import SidebarActions from './SidebarActions';
+import RecentProjects from './RecentProjects';
 import Logo from '../../components/Logo';
 
 
@@ -11,7 +12,10 @@ const StartScreen = () => {
             <div className="StartScreen__Content">
                 <div className="StartScreen__Sidebar">
                     <Logo />
-                    <Actions />
+                    <SidebarActions />
+                </div>
+                <div className="StartScreen__Main">
+                    <RecentProjects />
                 </div>
             </div>
         </div>
