@@ -1,0 +1,50 @@
+.StartScreen__Sidebar {
+    border-right: 1px solid rgba($clr-white, 0.5);
+    color: $clr-white;
+    margin: 1.0em;
+    padding: 0.5em 1.0em;
+    width: 250px;
+
+    .Logo {
+        h1 {
+            color: $clr-white;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.StartScreen__Sidebar__Actions {
+
+    a {
+        background: rgba($clr-white, 0.1);
+        border-radius: 3px;
+        color: $clr-white;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0.25em 0;
+        padding: 0.5em 1.0em;
+        text-decoration: none;
+
+        &:hover {
+            background: rgba($clr-white, 0.25);
+        }
+    }
+
+    h2 {
+        font-size: 1.25em;
+        font-weight: bold;
+        margin-bottom: none;
+        text-decoration: none;
+    }
+
+    li {
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        padding-bottom: 1.0em;
+    }
+
+}
