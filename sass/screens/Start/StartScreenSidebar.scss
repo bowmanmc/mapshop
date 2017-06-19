@@ -25,6 +25,7 @@
         margin: 0.25em 0;
         padding: 0.5em 1.0em;
         text-decoration: none;
+        transition: $transition-hover;
 
         &:hover {
             background: rgba($clr-white, 0.25);

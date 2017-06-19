@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Logo from '../../components/Logo';
-
 
 const SidebarActions = () => {
     return (
