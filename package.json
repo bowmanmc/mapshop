@@ -25,9 +25,9 @@
     "dev": "npm-run-all --parallel electron watch",
     "watch": "npm-run-all --parallel watch:sass",
     "lint:sass": "sass-lint -c sass-lint.config.yml -v",
-    "watch:sass": "nodemon -e scss -w sass -x \"npm run sass\"",
+    "watch:sass": "nodemon -e scss -w app/sass -x \"npm run sass\"",
     "presass": "npm-run-all lint:sass",
-    "sass": "node-sass --source-map true --include-path ./sass --include-path node_modules ./sass/main.scss ./app/styles/bundle.css",
+    "sass": "node-sass --source-map true --include-path ./app/sass --include-path node_modules ./app/sass/main.scss ./app/styles/bundle.css",
     "postsass": "postcss app/styles/bundle.css -c postcss.config.js -o app/styles/bundle.min.css"
   }
 }
