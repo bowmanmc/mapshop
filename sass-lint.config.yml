@@ -1,10 +1,10 @@
 # Sass Lint Documentation: https://github.com/sasstools/sass-lint
 files:
     include:
-        - 'app/sass/**/*.s+(a|c)ss'
+        - 'app/**/*.s+(a|c)ss'
     ignore:
-        - 'app/sass/bourbon/**'
-        - 'app/sass/neat/**'
+        - 'app/defaults/bourbon/**'
+        - 'app/defaults/neat/**'
 rules:
     # Extends
     extends-before-mixins: 0
