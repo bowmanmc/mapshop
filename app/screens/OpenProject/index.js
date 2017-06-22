@@ -4,6 +4,7 @@ import { connect }  from 'react-redux';
 import SidebarActions from './SidebarActions';
 import RecentProjects from './RecentProjects';
 import Logo from '../../components/Logo';
+import * as actions from '../../state/project/actions';
 
 
 class OpenProjectScreen extends React.Component {
@@ -12,7 +13,6 @@ class OpenProjectScreen extends React.Component {
     }
 
     render() {
-
         let className = "OpenProjectScreen";
         // Hide this screen when a project is loaded into state. Show it if
         // there is no project loaded.
@@ -26,7 +26,8 @@ class OpenProjectScreen extends React.Component {
                 <div className="OpenProjectScreen__Content">
                     <div className="OpenProjectScreen__Sidebar">
                         <Logo />
-                        <SidebarActions />
+                        <SidebarActions
+                            onNewProject={this.props.dispatchNewProject} />
                     </div>
                     <div className="OpenProjectScreen__Main">
                         <RecentProjects />
@@ -37,10 +38,18 @@ class OpenProjectScreen extends React.Component {
     }
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     return {
         project: state.project
     };
-}
+};
 
-export default connect(mapStateToProps)(OpenProjectScreen);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchNewProject: () => {
+            dispatch(actions.newProject());
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(OpenProjectScreen);

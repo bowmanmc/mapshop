@@ -6,7 +6,6 @@ export default function project(state = null, action) {
 
     switch (action.type) {
         case types.PROJECT_NEW:
-            console.log('Project.PROJECT_NEW');
             return Object.assign({}, state, {
                 project: {}
             });

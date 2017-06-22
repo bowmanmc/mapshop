@@ -1,14 +1,13 @@
 import React from 'react';
 
 
-const SidebarActions = () => {
+const SidebarActions = (props) => {
     return (
         <div className="OpenProjectScreen__SidebarActions">
             <ul>
-                <li><a href="">New Project</a></li>
+                <li><a onClick={props.onNewProject}>New Project</a></li>
                 <li><a href="">Open Project</a></li>
             </ul>
-
         </div>
     );
 };
