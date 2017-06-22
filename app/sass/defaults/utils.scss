@@ -3,6 +3,9 @@ $box-shadow: 0 0 7px $clr-black;
 $transition-hover: all 0.35s ease-out;
 
 @mixin screen() {
-    height: 100%;
-    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }

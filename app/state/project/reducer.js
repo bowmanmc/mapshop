@@ -1,11 +1,12 @@
 import { types } from './actions';
-import defaultState from '../defaultState';
 
 
-export default function project(state = defaultState, action) {
+// This reducer only works on the project slice of the state
+export default function project(state = null, action) {
 
     switch (action.type) {
         case types.PROJECT_NEW:
+            console.log('Project.PROJECT_NEW');
             return Object.assign({}, state, {
                 project: {}
             });
