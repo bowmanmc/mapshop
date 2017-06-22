@@ -16,9 +16,9 @@ const RecentProjects = () => {
     }];
 
     return (
-        <div className="StartScreen__RecentProjects">
+        <div className="OpenProjectScreen__RecentProjects">
             <h2>Recent Projects</h2>
-            <div className="StartScreen__RecentProjects-list">
+            <div className="OpenProjectScreen__RecentProjects-list">
                 {projects.map((project, i) => {
                     return <RecentProject key={i} project={project} />
                 })}

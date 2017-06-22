@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-import MapScreen from './screens/Map';
-import StartScreen from './screens/Start';
+import MapEditorScreen from './screens/MapEditor';
+import OpenProjectScreen from './screens/OpenProject';
 
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <StartScreen />
+                <OpenProjectScreen />
 
-                <MapScreen />
+                <MapEditorScreen />
             </div>
         );
     }

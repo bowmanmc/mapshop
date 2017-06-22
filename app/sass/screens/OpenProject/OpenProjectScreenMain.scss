@@ -1,19 +1,19 @@
-.StartScreen__Main {
+.OpenProjectScreen__Main {
     flex: 1;
 }
 
-.StartScreen__RecentProjects {
+.OpenProjectScreen__RecentProjects {
     color: $clr-light;
 }
 
-.StartScreen__RecentProjects-list {
+.OpenProjectScreen__RecentProjects-list {
     display: flex;
     flex-wrap: wrap;
 }
 
 $ssrp-txt-clr: lighten($clr-black, 20%);
 
-.StartScreen__RecentProject {
+.OpenProjectScreen__RecentProject {
     background: rgba($clr-light, 0.9);
     box-shadow: 0 0 12px transparent;
     color: $ssrp-txt-clr;
@@ -29,15 +29,15 @@ $ssrp-txt-clr: lighten($clr-black, 20%);
     }
 }
 
-.StartScreen__RecentProject-preview {
+.OpenProjectScreen__RecentProject-preview {
     background: $clr-highlight;
     min-height: 156px;
 }
 
-.StartScreen__RecentProject-info {
+.OpenProjectScreen__RecentProject-info {
     padding: 1.0em;
 }
 
-.StartScreen__RecentProject-name {
+.OpenProjectScreen__RecentProject-name {
     text-align: center;
 }

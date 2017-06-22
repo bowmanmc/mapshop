@@ -6,29 +6,29 @@ import RecentProjects from './RecentProjects';
 import Logo from '../../components/Logo';
 
 
-class StartScreen extends React.Component {
+class OpenProjectScreen extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
 
-        let className = "StartScreen";
+        let className = "OpenProjectScreen";
         // Hide this screen when a project is loaded into state. Show it if
         // there is no project loaded.
         if (!this.props.project) {
-            className = "StartScreen Screen-hidden";
+            className = "OpenProjectScreen Screen-hidden";
         }
 
         return (
             <div className={className}>
-                <div className="StartScreen__Background" />
-                <div className="StartScreen__Content">
-                    <div className="StartScreen__Sidebar">
+                <div className="OpenProjectScreen__Background" />
+                <div className="OpenProjectScreen__Content">
+                    <div className="OpenProjectScreen__Sidebar">
                         <Logo />
                         <SidebarActions />
                     </div>
-                    <div className="StartScreen__Main">
+                    <div className="OpenProjectScreen__Main">
                         <RecentProjects />
                     </div>
                 </div>
@@ -43,4 +43,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(StartScreen);
+export default connect(mapStateToProps)(OpenProjectScreen);
