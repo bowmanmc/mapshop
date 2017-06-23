@@ -16,9 +16,10 @@ class OpenProjectScreen extends React.Component {
         let className = "OpenProjectScreen";
         // Hide this screen when a project is loaded into state. Show it if
         // there is no project loaded.
-        if (!this.props.project) {
+        if (this.props.project) {
             className = "OpenProjectScreen Screen-hidden";
         }
+        console.log('OpenProjectScreen rendering with className: ' + className);
 
         return (
             <div className={className}>

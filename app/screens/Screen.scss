@@ -1,0 +1,14 @@
+
+// A Screen is full page
+@mixin screen() {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: $transition-slide;
+}
+
+.Screen-hidden {
+    transform: translateX(-100%);
+}

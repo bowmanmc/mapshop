@@ -10,11 +10,10 @@
 @import 'defaults/utils';
 
 // Components
-@import 'components/Preview/Preview';
-@import 'components/Sidebar/Sidebar';
+@import 'components/Logo/Logo';
 
 // Screens
-@import 'screens/MainScreen';
+@import 'screens/Screen';
 @import 'screens/MapEditor/MapEditorScreen';
 @import 'screens/OpenProject/OpenProjectScreen';
 @import 'screens/OpenProject/OpenProjectScreenMain';
