@@ -13,13 +13,15 @@ class OpenProjectScreen extends React.Component {
     }
 
     render() {
+        //console.log('Current state: ' + JSON.stringify(this.props));
+
         let className = "OpenProjectScreen";
         // Hide this screen when a project is loaded into state. Show it if
         // there is no project loaded.
-        if (this.props.project) {
+        if (this.props.project && this.props.project.id) {
             className = "OpenProjectScreen Screen-hidden";
         }
-        console.log('OpenProjectScreen rendering with className: ' + className);
+        //console.log('OpenProjectScreen rendering with className: ' + className);
 
         return (
             <div className={className}>
@@ -40,9 +42,7 @@ class OpenProjectScreen extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-    return {
-        project: state.project
-    };
+    return state.project || {};
 };
 
 const mapDispatchToProps = (dispatch) => {

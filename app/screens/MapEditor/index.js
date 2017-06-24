@@ -1,12 +1,36 @@
 import React from 'react';
+import { connect }  from 'react-redux';
+
+import MapEditor from './MapEditor';
+import * as actions from '../../state/project/actions';
 
 
-const MapEditorScreen = () => {
-    return (
-        <div className="MapEditorScreen">
-            <p>map editor yo</p>
-        </div>
-    );
+class MapEditorScreen extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <MapEditor
+                onProjectClose={this.props.dispatchCloseProject}
+            />
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        project: state.project
+    };
 };
 
-export default MapEditorScreen;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatchCloseProject: () => {
+            dispatch(actions.closeProject());
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapEditorScreen);
