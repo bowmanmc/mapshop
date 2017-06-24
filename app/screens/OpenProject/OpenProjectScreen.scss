@@ -1,6 +1,7 @@
 
 .OpenProjectScreen {
     @include screen();
+    z-index: 10;
 }
 
 .OpenProjectScreen__Background {
@@ -14,11 +15,11 @@
     z-index: 0;
 
     &::before {
-        background-image: linear-gradient(to right bottom, $clr-black, darken($clr-highlight, 35%));
+        background-image: linear-gradient(to bottom, rgba($clr-black, 0.35), rgba($clr-black, 0.65));
         bottom: 0;
         content: '';
         left: 0;
-        opacity: 0.7;
+        opacity: 1;
         position: absolute;
         right: 0;
         top: 0;
