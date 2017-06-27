@@ -1,0 +1,8 @@
+
+$met-bg: lighten($clr-dark, 5%);
+
+.MapEditorToolbar {
+    background: $met-bg;
+    border-right: 1px solid lighten($met-bg, 3%);
+    box-shadow: 0 0 7px rgba($clr-black, 0.35);
+}

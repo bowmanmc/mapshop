@@ -3,4 +3,15 @@
     @include screen();
 
     background: $clr-dark;
+    display: flex;
 }
+
+.MapEditorToolbar {
+    width: 128px;
+}
+.MapEditorCanvas {
+    flex: 1;
+}
+
+@import './MapEditorToolbar';
+@import './MapEditorCanvas';
