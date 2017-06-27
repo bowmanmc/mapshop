@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect }  from 'react-redux';
 
-import MapEditor from './MapEditor';
+import MapEditorCanvas from './MapEditorCanvas';
+import MapEditorToolbar from './MapEditorToolbar';
 import * as actions from '../../state/project/actions';
 
 
@@ -12,9 +13,10 @@ class MapEditorScreen extends React.Component {
 
     render() {
         return (
-            <MapEditor
-                onProjectClose={this.props.dispatchCloseProject}
-            />
+            <div className="MapEditorScreen">
+                <MapEditorToolbar />
+                <MapEditorCanvas />
+            </div>
         );
     }
 }
