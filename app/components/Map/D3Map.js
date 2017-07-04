@@ -6,7 +6,7 @@ import d3 from 'd3';
 import { geoCentroid, geoConicConformal, geoPath } from 'd3-geo';
 
 
-class Map extends React.Component {
+class D3Map extends React.Component {
 
     constructor(props) {
         super(props);
@@ -64,4 +64,4 @@ class Map extends React.Component {
     }
 };
 
-export default Map;
+export default D3Map;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MapEditorScreen from './screens/MapEditor';
+import MapEditorScreen from './screens/MapEditorScreen';
 import OpenProjectScreen from './screens/OpenProject';
 
 

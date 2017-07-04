@@ -1,7 +1,7 @@
 import fs from 'fs';
 import React from 'react';
 
-import Map from './Map';
+import D3Map from './D3Map';
 
 
 class MapEditorCanvas extends React.Component {
@@ -13,7 +13,7 @@ class MapEditorCanvas extends React.Component {
     render() {
         return (
             <div className="MapEditorCanvas">
-                <Map />
+                <D3Map />
             </div>
         );
     }

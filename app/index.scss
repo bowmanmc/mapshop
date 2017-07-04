@@ -11,10 +11,12 @@
 
 // Components
 @import 'components/Logo/Logo';
+@import 'components/Map/index';
+@import 'components/MapToolbar/index';
 
 // Screens
 @import 'screens/Screen';
-@import 'screens/MapEditor/index';
+@import 'screens/MapEditorScreen';
 @import 'screens/OpenProject/OpenProjectScreen';
 @import 'screens/OpenProject/OpenProjectScreenMain';
 @import 'screens/OpenProject/OpenProjectScreenSidebar';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect }  from 'react-redux';
 
-import MapEditorCanvas from './MapEditorCanvas';
-import MapEditorToolbar from './MapEditorToolbar';
-import * as actions from '../../state/project/actions';
+import Map from '../components/Map';
+import MapEditorToolbar from '../components/MapToolbar';
+import * as actions from '../state/project/actions';
 
 
 class MapEditorScreen extends React.Component {
@@ -15,7 +15,7 @@ class MapEditorScreen extends React.Component {
         return (
             <div className="MapEditorScreen">
                 <MapEditorToolbar />
-                <MapEditorCanvas />
+                <Map />
             </div>
         );
     }
