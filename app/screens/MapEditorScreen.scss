@@ -4,11 +4,15 @@
 
     background: $clr-dark;
     display: flex;
+    flex-direction: column;
 }
 
-.MapEditorToolbar {
-    width: 128px;
+.MapEditorScreen__apptoolbar {
+    height: 48px;
 }
-.MapEditorCanvas {
+
+.MapEditorScreen__workarea {
+    display: flex;
     flex: 1;
+    flex-direction: row;
 }

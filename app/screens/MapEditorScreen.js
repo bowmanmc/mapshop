@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect }  from 'react-redux';
 
+import AppToolbar from '../components/AppToolbar';
 import Map from '../components/Map';
-import MapEditorToolbar from '../components/MapToolbar';
+import MapToolbar from '../components/MapToolbar';
 import * as actions from '../state/project/actions';
 
 
@@ -14,8 +15,13 @@ class MapEditorScreen extends React.Component {
     render() {
         return (
             <div className="MapEditorScreen">
-                <MapEditorToolbar />
-                <Map />
+                <div className="MapEditorScreen__apptoolbar">
+                    <AppToolbar />
+                </div>
+                <div className="MapEditorScreen__workarea">
+                    <MapToolbar />
+                    <Map />
+                </div>
             </div>
         );
     }

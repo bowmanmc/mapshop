@@ -1,21 +1,20 @@
 
-$met-clr-bg: lighten($clr-dark, 5%);
 $met-clr-hoverbg: rgba($clr-white, 0.05);
 
 .MapEditorToolbar {
-    background: $met-clr-bg;
-    border-right: 1px solid lighten($met-clr-bg, 4%);
-    box-shadow: 0 0 7px rgba($clr-black, 0.35);
+    background: $clr-chromebg;
+    //border-right: 1px solid lighten($clr-chromebg, 4%);
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
 
 .MapEditorToolbar__item {
-    border-top: 1px solid lighten($met-clr-bg, 4%);
+    border-top: 1px solid lighten($clr-chromebg, 4%);
 }
 
 .MapEditorToolbar__link {
-    box-shadow: inset 0 0 2px darken($met-clr-bg, 2%);
+    box-shadow: inset 0 0 2px darken($clr-chromebg, 2%);
     color: $clr-light;
     cursor: pointer;
     display: block;
