@@ -23,7 +23,7 @@ const MapEditorToolbar = (props) => {
             </div>
 
             <div className="MapEditorToolbar__item MapEditorToolbar__info">
-                v1.0.2 (2017-07)
+                v1.0.0 (2017-07)
             </div>
         </div>
     );
