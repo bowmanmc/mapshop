@@ -38,9 +38,16 @@ class Map extends React.Component {
         const t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
         projection.scale(s).translate(t);
 
+        const styles = {
+            fill: '#666666',
+            stroke: '#d3d3d3',
+            'strokeWidth': 1
+        };
+
         const state = mapData.features.map((d, i) => {
             return (
                 <path
+                    {...styles}
                     key={'path-' + i}
                     d={path(d)}
                     className='state'
