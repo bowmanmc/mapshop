@@ -10,12 +10,6 @@ $met-clr-hoverbg: rgba($clr-white, 0.05);
     flex-direction: column;
 }
 
-.MapEditorToolbar__info {
-    color: $clr-gray-70;
-    font-size: 0.75rem;
-    padding: 1.0em;
-}
-
 .MapEditorToolbar__item {
     border-top: 1px solid lighten($met-clr-bg, 4%);
 }

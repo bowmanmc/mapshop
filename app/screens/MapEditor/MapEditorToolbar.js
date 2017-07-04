@@ -22,9 +22,6 @@ const MapEditorToolbar = (props) => {
                 <a className="MapEditorToolbar__link">Base Map</a>
             </div>
 
-            <div className="MapEditorToolbar__item MapEditorToolbar__info">
-                v1.0.0 (2017-07)
-            </div>
         </div>
     );
 };

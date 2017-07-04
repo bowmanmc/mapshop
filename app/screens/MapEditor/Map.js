@@ -39,9 +39,9 @@ class Map extends React.Component {
         projection.scale(s).translate(t);
 
         const styles = {
-            fill: '#666666',
+            fill: '#303c3f',
             stroke: '#d3d3d3',
-            'strokeWidth': 1
+            'strokeWidth': 0.5
         };
 
         const state = mapData.features.map((d, i) => {
