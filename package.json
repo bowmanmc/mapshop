@@ -35,7 +35,7 @@
     "electron": "electron .",
     "dev": "npm-run-all --parallel electron watch",
     "watch": "npm-run-all --parallel watch:sass watch:test",
-    "lint:sass": "sass-lint -c sass-lint.config.yml -v",
+    "lint:sass": "sass-lint -c .sass-lint.yml -v",
     "presass": "npm-run-all lint:sass",
     "sass": "node-sass --source-map true --include-path ./app --include-path node_modules ./app/index.scss ./app/styles/bundle.css",
     "postsass": "postcss app/styles/bundle.css -c postcss.config.js -o app/styles/bundle.min.css",

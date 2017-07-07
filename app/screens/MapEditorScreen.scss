@@ -2,7 +2,7 @@
 .MapEditorScreen {
     @include screen();
 
-    background: $clr-dark;
+    background: lighten($clr-dark, 5%);
     display: flex;
     flex-direction: column;
 }
