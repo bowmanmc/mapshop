@@ -15,15 +15,16 @@ $t1-yellow: #ffffa6;
 
 // Hat tip to: https://seesparkbox.com/foundry/sassy_grayscale
 $clr-white: #ffffff;
-$clr-gray-90: #E3E3E3;
-$clr-gray-70: #B0B0B0;
+$clr-gray-90: #e3e3e3;
+$clr-gray-70: #b0b0b0;
 $clr-gray-40: #696969;
 $clr-gray-15: #222222;
 $clr-black: #000000;
 
 $clr-dark: #212223;
 $clr-light: $t0-light;
-$clr-highlight: $t0-blue;
+$clr-highlight: #ffdd00;
 
-$clr-chrome: #353535;
-$clr-canvas: #222222;
+$clr-chrome: #333333;
+$clr-divider: $clr-gray-15;
+$clr-canvas: $clr-gray-15;

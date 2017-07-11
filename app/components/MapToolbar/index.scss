@@ -3,32 +3,18 @@ $met-clr-hoverbg: rgba($clr-white, 0.05);
 
 .MapEditorToolbar {
     background: $clr-chrome;
-    //border-right: 1px solid lighten($clr-chromebg, 4%);
+    color: $clr-gray-90;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    padding: 1.0em;
+    width: 400px;
 }
 
 .MapEditorToolbar__item {
-    border-top: 1px solid lighten($clr-dark, 4%);
-}
 
-.MapEditorToolbar__link {
-    box-shadow: inset 0 0 2px darken($clr-dark, 2%);
-    color: $clr-light;
-    cursor: pointer;
-    display: block;
-    padding: 1.5em 0.5em;
-    text-align: center;
-    text-shadow: 1px 1px 0 transparent;
-    transition: $transition-hover;
+    padding-bottom: 2.0em;
 
-    &:hover {
-        background: $met-clr-hoverbg;
-        color: $clr-white;
+    h2 {
+        border-bottom: 1px solid $clr-gray-90;
     }
-}
-
-.MapEditorToolbar__logo {
-    flex: 1;
 }
