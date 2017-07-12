@@ -6,10 +6,13 @@
     "d3": "^4.9.1",
     "d3-geo-projection": "^2.1.2",
     "react": "^15.6.0",
+    "react-color": "^2.13.1",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.2.11",
+    "semantic-ui-react": "^0.71.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

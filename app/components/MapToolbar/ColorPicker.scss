@@ -1,0 +1,9 @@
+
+$cp-size: 12px;
+
+.ColorPicker {
+    cursor: pointer;
+    display: inline-block;
+    height: $cp-size;
+    width: $cp-size * 2;
+}
