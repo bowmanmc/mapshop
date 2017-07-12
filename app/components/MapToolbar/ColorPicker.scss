@@ -2,8 +2,10 @@
 $cp-size: 12px;
 
 .ColorPicker {
+    border-radius: 3px;
     cursor: pointer;
     display: inline-block;
     height: $cp-size;
+    margin-right: 0.5em;
     width: $cp-size * 2;
 }

@@ -9,16 +9,35 @@ class BaseMapControls extends React.Component {
         super(props);
 
         this.state = {
-            fillColorPickerOpen: false
+            fillColor: '#ffdd00',
+            stroke: '#0099cc'
         };
+
+        this.onColorChange = this.onColorChange.bind(this);
+    }
+
+    onColorChange(evt) {
+        let change = {};
+        change[evt.name] = evt.value;
+        this.setState(change);
     }
 
     render() {
-
         return (
             <div className="BaseMapControls">
                 <div className="BaseMapControls__control">
-                    Fill Color: <ColorPicker />
+                    <ColorPicker
+                        name='fillColor'
+                        color={ this.state.fillColor }
+                        onChange={ this.onColorChange } />
+                    Fill Color
+                </div>
+                <div className="BaseMapControls__control">
+                    <ColorPicker
+                        name='stroke'
+                        color={ this.state.stroke }
+                        onChange={ this.onColorChange } />
+                    Stroke Color
                 </div>
             </div>
         );

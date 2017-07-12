@@ -8,8 +8,7 @@ class ColorPicker extends React.Component {
         super(props);
 
         this.state = {
-            pickerOpen: false,
-            color: '#ffdd00'
+            pickerOpen: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,22 +17,23 @@ class ColorPicker extends React.Component {
     }
 
     handleChange(color) {
-        this.setState({
-            color: color.hex
+        this.props.onChange({
+            name: this.props.name,
+            value: color.hex
         });
-    };
+    }
 
     handleClick() {
         this.setState({
             pickerOpen: !this.state.pickerOpen
         });
-    };
+    }
 
     handleClose() {
         this.setState({
             pickerOpen: false
         });
-    };
+    }
 
     render() {
         const popover = {
@@ -50,7 +50,7 @@ class ColorPicker extends React.Component {
         };
 
         const btnStyle = {
-            background: this.state.color
+            background: this.props.color
         };
 
         return (
@@ -59,7 +59,7 @@ class ColorPicker extends React.Component {
                 { this.state.pickerOpen ?
                     <div style={ popover }>
                         <div style={ cover } onClick={ this.handleClose } />
-                        <SketchPicker color={ this.state.color } onChange={ this.handleChange } />
+                        <SketchPicker color={ this.props.color } onChange={ this.handleChange } />
                     </div> : null
                 }
             </span>
