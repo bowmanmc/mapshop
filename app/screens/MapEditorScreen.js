@@ -10,17 +10,24 @@ import * as actions from '../state/project/actions';
 class MapEditorScreen extends React.Component {
     constructor(props) {
         super(props);
+
+        this.onProjectChange = this.onProjectChange.bind(this);
+    }
+
+    onProjectChange(changes) {
+        this.props.dispatchEditProject(changes);
     }
 
     render() {
+        console.log('Rendering: ' + JSON.stringify(this.props.project));
         return (
             <div className="MapEditorScreen">
                 <div className="MapEditorScreen__apptoolbar">
                     <AppToolbar />
                 </div>
                 <div className="MapEditorScreen__workarea">
-                    <MapToolbar />
-                    <Map />
+                    <MapToolbar  project={ this.props.project } onChange={ this.onProjectChange } />
+                    <Map project={ this.props.project } />
                 </div>
             </div>
         );
@@ -37,6 +44,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         dispatchCloseProject: () => {
             dispatch(actions.closeProject());
+        },
+        dispatchEditProject: (newProject) => {
+            console.log('Dispatching editProject with values: ' + JSON.stringify(newProject));
+            dispatch(actions.editProject(newProject));
         }
     };
 };

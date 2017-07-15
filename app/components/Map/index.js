@@ -13,7 +13,7 @@ class MapEditorCanvas extends React.Component {
     render() {
         return (
             <div className="MapEditorCanvas">
-                <D3Map />
+                <D3Map project={ this.props.project } />
             </div>
         );
     }

@@ -22,6 +22,8 @@ class D3Map extends React.Component {
     }
 
     render() {
+        const project = this.props.project;
+
         const mapData = this.loadMapData();
         const projection = geoConicConformal();
         const path = geoPath().projection(projection);
@@ -39,8 +41,8 @@ class D3Map extends React.Component {
         projection.scale(s).translate(t);
 
         const styles = {
-            fill: '#303c3f',
-            stroke: '#d3d3d3',
+            fill: project.basemap.fillColor,
+            stroke: project.basemap.stroke,
             'strokeWidth': 0.5
         };
 
