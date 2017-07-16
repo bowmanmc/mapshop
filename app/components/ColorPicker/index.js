@@ -56,6 +56,7 @@ class ColorPicker extends React.Component {
         return (
             <span>
                 <div className="ColorPicker" style={ btnStyle } onClick={ this.handleClick } />
+                <span className="ColorPicker__value" onClick={ this.handleClick } >{ this.props.color }</span>
                 { this.state.pickerOpen ?
                     <div style={ popover }>
                         <div style={ cover } onClick={ this.handleClose } />

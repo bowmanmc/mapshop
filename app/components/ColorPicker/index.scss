@@ -9,3 +9,8 @@ $cp-size: 12px;
     margin-right: 0.5em;
     width: $cp-size * 2;
 }
+
+.ColorPicker__value {
+    cursor: pointer;
+    font-family: $fontstack-mono;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ColorPicker from './ColorPicker';
+import ColorPicker from '../ColorPicker';
 
 
 class BaseMapControls extends React.Component {
@@ -23,18 +23,26 @@ class BaseMapControls extends React.Component {
         return (
             <div className="BaseMapControls">
                 <div className="BaseMapControls__control">
-                    <ColorPicker
-                        name='fillColor'
-                        color={ settings.fillColor }
-                        onChange={ this.onColorChange } />
-                    Fill Color
+                    <div className="BaseMapControls__control-label">
+                        Fill Color:
+                    </div>
+                    <div className="BaseMapControls__control-input">
+                        <ColorPicker
+                            name='fillColor'
+                            color={ settings.fillColor }
+                            onChange={ this.onColorChange } />
+                    </div>
                 </div>
                 <div className="BaseMapControls__control">
-                    <ColorPicker
-                        name='stroke'
-                        color={ settings.stroke }
-                        onChange={ this.onColorChange } />
-                    Stroke Color
+                    <div className="BaseMapControls__control-label">
+                        Stroke Color:
+                    </div>
+                    <div className="BaseMapControls__control-input">
+                        <ColorPicker
+                            name='stroke'
+                            color={ settings.stroke }
+                            onChange={ this.onColorChange } />
+                    </div>
                 </div>
             </div>
         );
