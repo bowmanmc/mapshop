@@ -28,8 +28,8 @@ class D3Map extends React.Component {
         const projection = geoConicConformal();
         const path = geoPath().projection(projection);
 
-        const width = 500;
-        const height = 500;
+        const width = this.props.size.width;
+        const height = this.props.size.height;
 
         const centroid = geoCentroid(mapData.features[0]);
         const r = [centroid[0] * -1, centroid[1] * -1];

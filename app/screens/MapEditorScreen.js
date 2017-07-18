@@ -19,7 +19,7 @@ class MapEditorScreen extends React.Component {
     }
 
     render() {
-        console.log('Rendering: ' + JSON.stringify(this.props.project));
+        //console.log('Rendering: ' + JSON.stringify(this.props.project));
         return (
             <div className="MapEditorScreen">
                 <div className="MapEditorScreen__apptoolbar">
@@ -46,7 +46,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actions.closeProject());
         },
         dispatchEditProject: (newProject) => {
-            console.log('Dispatching editProject with values: ' + JSON.stringify(newProject));
             dispatch(actions.editProject(newProject));
         }
     };
