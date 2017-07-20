@@ -2,7 +2,12 @@ import React from 'react';
 import { SketchPicker } from 'react-color';
 import { CustomPicker } from 'react-color';
 
-const DEFAULT_COLOR = '#ffdd00';
+const DEFAULT_COLOR = {
+    r: 255,
+    g: 221,
+    b: 0,
+    a: 1
+};
 
 class ColorPicker extends React.Component {
 
@@ -21,7 +26,7 @@ class ColorPicker extends React.Component {
     handleChange(color) {
         this.props.onChange({
             name: this.props.name,
-            value: color.hex
+            value: color.rgb
         });
     }
 
@@ -54,19 +59,19 @@ class ColorPicker extends React.Component {
         const btnStyle = {
             background: 'linear-gradient(45deg, white 48%, red 48%, white 52%)'
         };
-        if (this.props.color) {
-            btnStyle.background = this.props.color;
+        const clr = this.props.color;
+        if (clr && clr.a && clr.a > 0) {
+            btnStyle.background = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
         }
 
-        let color = this.props.color || DEFAULT_COLOR;
+        let color = clr || DEFAULT_COLOR;
         return (
             <span>
                 <div className="ColorPicker" style={ btnStyle } onClick={ this.handleClick } />
-                <span className="ColorPicker__value" onClick={ this.handleClick } >{ this.props.color }</span>
                 { this.state.pickerOpen ?
                     <div style={ popover }>
                         <div style={ cover } onClick={ this.handleClose } />
-                        <SketchPicker disableAlpha={true} color={ color } onChange={ this.handleChange } />
+                        <SketchPicker disableAlpha={false} color={ color } onChange={ this.handleChange } />
                     </div> : null
                 }
             </span>
@@ -74,4 +79,5 @@ class ColorPicker extends React.Component {
     }
 };
 
+//export default CustomPicker(ColorPicker);
 export default ColorPicker;

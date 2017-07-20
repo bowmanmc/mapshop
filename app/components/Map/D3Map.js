@@ -40,14 +40,21 @@ class D3Map extends React.Component {
         const t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
         projection.scale(s).translate(t);
 
-        const styles = {
+        let styles = {
             fill: 'none',
-            stroke: project.basemap.stroke,
-            'strokeWidth': 0.5
+            stroke: 'none',
+            strokeWidth: 1
         };
-        if (project.basemap.fillColor) {
-            styles.fill = project.basemap.fillColor;
+        if (project.basemap.fillColor && project.basemap.fillColor.a > 0) {
+            let clr = project.basemap.fillColor;
+            styles.fill = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
         }
+
+        if (project.basemap.stroke && project.basemap.stroke.a > 0) {
+            let clr = project.basemap.stroke;
+            styles.stroke = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
+        }
+        //console.log('Rendering map with styles: ' + JSON.stringify(styles));
 
         const state = mapData.features.map((d, i) => {
             return (
