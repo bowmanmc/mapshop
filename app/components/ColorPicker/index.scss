@@ -1,5 +1,5 @@
 
-$cp-size: 12px;
+$cp-size: 14px;
 
 .ColorPicker {
     border-radius: 3px;
@@ -7,7 +7,7 @@ $cp-size: 12px;
     display: inline-block;
     height: $cp-size;
     margin-right: 0.5em;
-    width: $cp-size * 2;
+    width: $cp-size;
 }
 
 .ColorPicker__value {

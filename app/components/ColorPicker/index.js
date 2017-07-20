@@ -1,6 +1,8 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
+import { CustomPicker } from 'react-color';
 
+const DEFAULT_COLOR = '#ffdd00';
 
 class ColorPicker extends React.Component {
 
@@ -50,9 +52,13 @@ class ColorPicker extends React.Component {
         };
 
         const btnStyle = {
-            background: this.props.color
+            background: 'linear-gradient(45deg, white 48%, red 48%, white 52%)'
         };
+        if (this.props.color) {
+            btnStyle.background = this.props.color;
+        }
 
+        let color = this.props.color || DEFAULT_COLOR;
         return (
             <span>
                 <div className="ColorPicker" style={ btnStyle } onClick={ this.handleClick } />
@@ -60,7 +66,7 @@ class ColorPicker extends React.Component {
                 { this.state.pickerOpen ?
                     <div style={ popover }>
                         <div style={ cover } onClick={ this.handleClose } />
-                        <SketchPicker disableAlpha={true} color={ this.props.color } onChange={ this.handleChange } />
+                        <SketchPicker disableAlpha={true} color={ color } onChange={ this.handleChange } />
                     </div> : null
                 }
             </span>

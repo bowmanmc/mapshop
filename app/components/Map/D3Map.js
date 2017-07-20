@@ -41,10 +41,13 @@ class D3Map extends React.Component {
         projection.scale(s).translate(t);
 
         const styles = {
-            fill: project.basemap.fillColor,
+            fill: 'none',
             stroke: project.basemap.stroke,
             'strokeWidth': 0.5
         };
+        if (project.basemap.fillColor) {
+            styles.fill = project.basemap.fillColor;
+        }
 
         const state = mapData.features.map((d, i) => {
             return (

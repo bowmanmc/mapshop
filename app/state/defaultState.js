@@ -1,7 +1,7 @@
 export default {
     project: {
         basemap: {
-            fillColor: '#ffdd00',
+            fillColor: null,
             stroke: '#0099cc'
         }
     }
