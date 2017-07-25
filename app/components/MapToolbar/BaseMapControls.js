@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BaseMapSelector from './BaseMapSelector';
 import ColorPicker from '../ColorPicker';
 
 
@@ -22,6 +23,9 @@ class BaseMapControls extends React.Component {
 
         return (
             <div className="BaseMapControls">
+                <div className="BaseMapControls__control">
+                    <BaseMapSelector />
+                </div>
                 <div className="BaseMapControls__control">
                     <div className="BaseMapControls__control-label">
                         Fill Color:

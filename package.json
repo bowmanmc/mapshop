@@ -9,6 +9,7 @@
     "react-color": "^2.13.1",
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.5",
+    "react-select": "^1.0.0-rc.5",
     "redux": "^3.7.0",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.11",
