@@ -1,12 +1,8 @@
 import React from 'react';
-
 import Select from 'react-select';
 
+import States from './States';
 
-const options = [
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two' }
-];
 
 class BaseMapSelector extends React.Component {
 
@@ -14,17 +10,16 @@ class BaseMapSelector extends React.Component {
         super(props);
     }
 
-    onChange(evt) {
-        console.log(`Selected: ${JSON.stringify(evt)}`);
-    }
-
     render() {
+        const val = this.props.value || 'OH';
+
         return (
             <Select
                 name="basemap"
-                value="one"
-                options={options}
-                onChange={this.onChange}
+                clearable={false}
+                value={val}
+                options={States}
+                onChange={this.props.onChange}
             />
         );
     }
