@@ -33,26 +33,28 @@ class BaseMapControls extends React.Component {
                 <div className="BaseMapControls__control">
                     <BaseMapSelector value={ settings.mapId } onChange={ this.onMapChange } />
                 </div>
-                <div className="BaseMapControls__control">
-                    <div className="BaseMapControls__control-label">
-                        Fill Color:
+                <div className="BaseMapControls__colors">
+                    <div className="BaseMapControls__color-input">
+                        <div className="BaseMapControls__color-picker">
+                            <ColorPicker
+                                name='fillColor'
+                                color={ settings.fillColor }
+                                onChange={ this.onColorChange } />
+                        </div>
+                        <div className="BaseMapControls__color-label">
+                            Fill
+                        </div>
                     </div>
-                    <div className="BaseMapControls__control-input">
-                        <ColorPicker
-                            name='fillColor'
-                            color={ settings.fillColor }
-                            onChange={ this.onColorChange } />
-                    </div>
-                </div>
-                <div className="BaseMapControls__control">
-                    <div className="BaseMapControls__control-label">
-                        Stroke Color:
-                    </div>
-                    <div className="BaseMapControls__control-input">
-                        <ColorPicker
-                            name='stroke'
-                            color={ settings.stroke }
-                            onChange={ this.onColorChange } />
+                    <div className="BaseMapControls__color-input">
+                        <div className="BaseMapControls__color-picker">
+                            <ColorPicker
+                                name='stroke'
+                                color={ settings.stroke }
+                                onChange={ this.onColorChange } />
+                        </div>
+                        <div className="BaseMapControls__color-label">
+                            Stroke
+                        </div>
                     </div>
                 </div>
             </div>

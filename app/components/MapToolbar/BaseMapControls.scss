@@ -18,3 +18,14 @@
         width: 100%;
     }
 }
+
+.BaseMapControls__colors {
+    display: flex;
+    padding: 0.5em 0;
+
+    .BaseMapControls__color-input {
+        padding: 0 0.25em;
+        text-align: center;
+        width: 33%;
+    }
+}
