@@ -1,11 +1,10 @@
-$logoSize: 48px;
 
 .Logo {
     padding: 0.5em 1.0em;
 
     svg {
-        fill: $clr-gray-70;
-        height: $logoSize;
-        width: $logoSize;
+        fill: $clr-gray-85;
+        height: 48px;
+        width: 145px;
     }
 }
