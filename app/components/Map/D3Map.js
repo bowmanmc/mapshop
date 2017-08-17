@@ -41,8 +41,8 @@ class D3Map extends React.Component {
         const projection = geoConicConformal();
         const path = geoPath().projection(projection);
 
-        const width = this.props.size.width;
-        const height = this.props.size.height;
+        const width = 1000;
+        const height = 1000;
 
         const centroid = geoCentroid(feature);
         const r = [centroid[0] * -1, centroid[1] * -1];
@@ -67,22 +67,11 @@ class D3Map extends React.Component {
             let clr = project.basemap.stroke;
             styles.stroke = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
         }
-        //console.log('Rendering map with styles: ' + JSON.stringify(styles));
 
-        // const state = features.map((d, i) => {
-        //     return (
-        //         <path
-        //             {...styles}
-        //             key={'path-' + i}
-        //             d={path(d)}
-        //             className='state'
-        //             />
-        //     );
-        // });
-
+        const viewBox = `0 0 ${width} ${height}`;
         return (
             <svg ref={node => this.node = node}
-                width={width} height={height}>
+                viewBox={viewBox}>
                 <path
                     {...styles}
                     d={path(feature)}
