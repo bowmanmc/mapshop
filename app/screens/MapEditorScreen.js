@@ -23,7 +23,7 @@ class MapEditorScreen extends React.Component {
         return (
             <div className="MapEditorScreen">
                 <div className="MapEditorScreen__apptoolbar">
-                    <AppToolbar />
+                    <AppToolbar project={ this.props.project } />
                 </div>
                 <div className="MapEditorScreen__workarea">
                     <MapToolbar  project={ this.props.project } onChange={ this.onProjectChange } />
