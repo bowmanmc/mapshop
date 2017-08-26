@@ -1,8 +1,6 @@
 import React from 'react';
 
-import BaseMapControls from './BaseMapControls';
-import DataControls from './DataControls';
-import ReferenceDataControls from './ReferenceDataControls';
+import LayerControls from './LayerControls';
 
 
 class MapEditorToolbar extends React.Component {
@@ -27,20 +25,9 @@ class MapEditorToolbar extends React.Component {
         return (
             <div className="MapEditorToolbar">
                 <div className="MapEditorToolbar__item">
-                    <h2>Base Map</h2>
-                    <BaseMapControls settings={ project.basemap } onChange={ this.onBasemapChange } />
+                    <h2>Map Layers</h2>
+                    <LayerControls settings={ project.basemap } onChange={ this.onBasemapChange } />
                 </div>
-
-                <div className="MapEditorToolbar__item">
-                    <h2>Reference Data</h2>
-                    <ReferenceDataControls />
-                </div>
-
-                <div className="MapEditorToolbar__item">
-                    <h2>Data</h2>
-                    <DataControls />
-                </div>
-
             </div>
         );
     }

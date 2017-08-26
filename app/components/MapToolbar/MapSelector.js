@@ -4,7 +4,7 @@ import Select from 'react-select';
 import States from './States';
 
 
-class BaseMapSelector extends React.Component {
+class MapSelector extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,4 +25,4 @@ class BaseMapSelector extends React.Component {
     }
 }
 
-export default BaseMapSelector;
+export default MapSelector;

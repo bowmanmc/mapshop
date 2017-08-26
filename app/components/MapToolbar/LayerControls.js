@@ -1,10 +1,10 @@
 import React from 'react';
 
-import BaseMapSelector from './BaseMapSelector';
+import MapSelector from './MapSelector';
 import ColorPicker from '../ColorPicker';
 
 
-class BaseMapControls extends React.Component {
+class LayerControls extends React.Component {
 
     constructor(props) {
         super(props);
@@ -29,30 +29,30 @@ class BaseMapControls extends React.Component {
         const settings = this.props.settings;
         //console.log('Rendering map with settings: ' + JSON.stringify(settings));
         return (
-            <div className="BaseMapControls">
-                <div className="BaseMapControls__control">
-                    <BaseMapSelector value={ settings.mapId } onChange={ this.onMapChange } />
+            <div className="LayerControls">
+                <div className="LayerControls__control">
+                    <MapSelector value={ settings.mapId } onChange={ this.onMapChange } />
                 </div>
-                <div className="BaseMapControls__colors">
-                    <div className="BaseMapControls__color-input">
-                        <div className="BaseMapControls__color-picker">
+                <div className="LayerControls__colors">
+                    <div className="LayerControls__color-input">
+                        <div className="LayerControls__color-picker">
                             <ColorPicker
                                 name='fillColor'
                                 color={ settings.fillColor }
                                 onChange={ this.onColorChange } />
                         </div>
-                        <div className="BaseMapControls__color-label">
+                        <div className="LayerControls__color-label">
                             Fill
                         </div>
                     </div>
-                    <div className="BaseMapControls__color-input">
-                        <div className="BaseMapControls__color-picker">
+                    <div className="LayerControls__color-input">
+                        <div className="LayerControls__color-picker">
                             <ColorPicker
                                 name='stroke'
                                 color={ settings.stroke }
                                 onChange={ this.onColorChange } />
                         </div>
-                        <div className="BaseMapControls__color-label">
+                        <div className="LayerControls__color-label">
                             Stroke
                         </div>
                     </div>
@@ -62,4 +62,4 @@ class BaseMapControls extends React.Component {
     }
 };
 
-export default BaseMapControls;
+export default LayerControls;
