@@ -21,6 +21,12 @@
     }
 }
 
+@keyframes spin {
+    to {
+        transform: rotate(1440deg);
+    }
+}
+
 .AppToolbar__btn {
     background: $clr-gray-30;
     border: 1px solid $clr-divider;
@@ -44,5 +50,9 @@
         margin: 0 0.5em;
         vertical-align: text-top;
         width: 18px;
+    }
+
+    svg.spinner {
+        animation: spin 2s infinite cubic-bezier(0.6, 0.2, 0.4, 0.8);
     }
 }

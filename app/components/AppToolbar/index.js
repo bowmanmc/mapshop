@@ -16,30 +16,40 @@ class AppToolbar extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            exporting: false
+        };
+
         this.exportSvg = this.exportSvg.bind(this);
     }
 
     exportSvg() {
-        console.log('Exporting SVG file...');
+        // if we're already exporting, just return
+        if (this.state.exporting) {
+            return;
+        }
+
+        this.setState({exporting: true});
         const mapData = DataLoader.loadMapData(this.props.project.basemap.mapId);
         const jsx = SvgRenderer.render(this.props.project, mapData);
         const svg = ReactDOMServer.renderToStaticMarkup(jsx);
-        console.log('Made SVG content!');
-        //console.log(svg);
+
         const dialog = remote.dialog;
         let filename = dialog.showSaveDialog({
             title: 'Export Map as SVG',
             defaultPath: 'maptop.svg'
         });
+
         if (!filename) {
+            this.setState({exporting: false});
             return; // user cancelled
         }
-        console.log('Saving SVG to file: ' + filename);
+
         fs.writeFile(filename, svg, 'utf-8', (err) => {
             if (err) {
                 console.log(`Error writing file ${filename}`, err);
             }
-            console.log('Wrote file');
+            this.setState({exporting: false});
         });
     }
 
@@ -52,7 +62,7 @@ class AppToolbar extends React.Component {
                 <div className="AppToolbar__middle">
                 </div>
                 <div className="AppToolbar__right">
-                    <ExportButton onClick={ this.exportSvg } />
+                    <ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
                 </div>
             </div>
         );
