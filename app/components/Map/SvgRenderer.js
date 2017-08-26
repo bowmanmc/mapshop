@@ -23,18 +23,16 @@ export default {
         projection.scale(s).translate(t);
 
         let styles = {
-            fill: 'none',
-            stroke: 'none',
+            fill: null,
+            stroke: null,
             strokeWidth: 1
         };
-        if (project.basemap.fillColor && project.basemap.fillColor.a > 0) {
-            let clr = project.basemap.fillColor;
-            styles.fill = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
+        if (project.basemap.fillColor) {
+            styles.fill = `${project.basemap.fillColor}`;
         }
 
-        if (project.basemap.stroke && project.basemap.stroke.a > 0) {
-            let clr = project.basemap.stroke;
-            styles.stroke = `rgba(${clr.r}, ${clr.g}, ${clr.b}, ${clr.a})`;
+        if (project.basemap.stroke) {
+            styles.stroke = `${project.basemap.stroke}`;
         }
 
         const viewBox = `0 0 ${width} ${height}`;
