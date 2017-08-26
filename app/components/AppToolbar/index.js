@@ -8,6 +8,7 @@ import fs from 'fs';
 import DataLoader from '../DataLoader';
 import Logo from '../Logo';
 import SvgRenderer from '../Map/SvgRenderer';
+import ExportButton from './ExportButton';
 
 
 class AppToolbar extends React.Component {
@@ -30,6 +31,9 @@ class AppToolbar extends React.Component {
             title: 'Export Map as SVG',
             defaultPath: 'maptop.svg'
         });
+        if (!filename) {
+            return; // user cancelled
+        }
         console.log('Saving SVG to file: ' + filename);
         fs.writeFile(filename, svg, 'utf-8', (err) => {
             if (err) {
@@ -48,10 +52,7 @@ class AppToolbar extends React.Component {
                 <div className="AppToolbar__middle">
                 </div>
                 <div className="AppToolbar__right">
-                    <a className="AppToolbar__btn" onClick={this.exportSvg}>
-                        <svg><use xlinkHref="images/fa/solid.svg#share-square"></use></svg>
-                        <span>Export</span>
-                    </a>
+                    <ExportButton onClick={ this.exportSvg } />
                 </div>
             </div>
         );
