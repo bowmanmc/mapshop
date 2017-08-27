@@ -7,6 +7,8 @@ import { geoCentroid, geoConicConformal, geoPath } from 'd3-geo';
 export default {
     render: function(project, mapData) {
 
+        const layer = project.layers[0];
+
         const projection = geoConicConformal();
         const path = geoPath().projection(projection);
 
@@ -27,12 +29,12 @@ export default {
             stroke: null,
             strokeWidth: 1
         };
-        if (project.basemap.fillColor) {
-            styles.fill = `${project.basemap.fillColor}`;
+        if (layer.fillColor) {
+            styles.fill = `${layer.fillColor}`;
         }
 
-        if (project.basemap.stroke) {
-            styles.stroke = `${project.basemap.stroke}`;
+        if (layer.stroke) {
+            styles.stroke = `${layer.stroke}`;
         }
 
         const viewBox = `0 0 ${width} ${height}`;

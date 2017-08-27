@@ -16,11 +16,11 @@ class LayerControls extends React.Component {
     onColorChange(evt) {
         let change = {};
         change[evt.name] = evt.value;
-        this.props.onChange(change);
+        this.props.onChange(this.props.id, change);
     }
 
     onMapChange(newMap) {
-        this.props.onChange({
+        this.props.onChange(this.props.id, {
             'mapId': newMap.value
         });
     }

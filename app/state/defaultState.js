@@ -1,9 +1,9 @@
 export default {
     project: {
-        basemap: {
+        layers: [{
             mapId: 'OH',
             fillColor: '#ffdd00',
             stroke: null
-        }
+        }]
     }
 }

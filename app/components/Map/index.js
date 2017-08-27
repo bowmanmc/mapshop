@@ -11,7 +11,8 @@ class MapEditorCanvas extends React.Component {
     }
 
     render() {
-        const mapData = DataLoader.loadMapData(this.props.project.basemap.mapId);
+        const layer = this.props.project.layers[0];
+        const mapData = DataLoader.loadMapData(layer.mapId);
         const svg = SvgRenderer.render(this.props.project, mapData);
         return (
             <div ref="MapEditorCanvas" className="MapEditorCanvas">
