@@ -30,30 +30,41 @@ class LayerControls extends React.Component {
         //console.log('Rendering map with settings: ' + JSON.stringify(settings));
         return (
             <div className="LayerControls">
-                <div className="LayerControls__control">
+
+                <div className="LayerControls__control-wide">
                     <MapSelector value={ settings.mapId } onChange={ this.onMapChange } />
                 </div>
-                <div className="LayerControls__colors">
-                    <div className="LayerControls__color-input">
+
+                <div className="LayerControls__control-container">
+                    <div className="LayerControls__control-small">
                         <div className="LayerControls__color-picker">
                             <ColorPicker
                                 name='fillColor'
                                 color={ settings.fillColor }
                                 onChange={ this.onColorChange } />
                         </div>
-                        <div className="LayerControls__color-label">
+                        <div className="LayerControls__control-label">
                             Fill
                         </div>
                     </div>
-                    <div className="LayerControls__color-input">
+
+                    <div className="LayerControls__control-small">
                         <div className="LayerControls__color-picker">
                             <ColorPicker
                                 name='stroke'
                                 color={ settings.stroke }
                                 onChange={ this.onColorChange } />
                         </div>
-                        <div className="LayerControls__color-label">
+                        <div className="LayerControls__control-label">
                             Stroke
+                        </div>
+                    </div>
+                    <div className="LayerControls__control-small">
+                        <div className="LayerControls__color-picker">
+                            <input className="LayerControls__number" placeholder="1" type="number" />
+                        </div>
+                        <div className="LayerControls__control-label">
+                            Stroke Width
                         </div>
                     </div>
                 </div>
