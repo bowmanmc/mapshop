@@ -5,6 +5,7 @@
   "dependencies": {
     "d3": "^4.9.1",
     "d3-geo-projection": "^2.1.2",
+    "geojson-merge": "^0.3.0",
     "react": "^15.6.0",
     "react-color": "^2.13.1",
     "react-dom": "^15.6.0",
