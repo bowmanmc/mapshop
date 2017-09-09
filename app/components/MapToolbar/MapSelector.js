@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-import States from './States';
+import MapIndex from '../../data';
 
 
 class MapSelector extends React.Component {
@@ -11,14 +11,24 @@ class MapSelector extends React.Component {
     }
 
     render() {
-        const val = this.props.value || 'OH';
+        const val = this.props.value || 'usa-oh';
+
+        // Convert to array of {label/value} objects for react-select
+        const mapIds = Object.keys(MapIndex);
+        let options = [];
+        mapIds.map(id => {
+            options.push({
+                label: MapIndex[id].name,
+                value: id
+            });
+        });
 
         return (
             <Select
                 name="basemap"
                 clearable={false}
                 value={val}
-                options={States}
+                options={options}
                 onChange={this.props.onChange}
             />
         );

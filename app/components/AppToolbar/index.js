@@ -5,7 +5,7 @@ import { remote } from 'electron';
 
 import fs from 'fs';
 
-import DataLoader from '../DataLoader';
+import DataLoader from '../../data/loader';
 import Logo from '../Logo';
 import SvgRenderer from '../Map/SvgRenderer';
 import ExportButton from './ExportButton';
@@ -30,7 +30,7 @@ class AppToolbar extends React.Component {
         }
 
         this.setState({exporting: true});
-        const mapData = DataLoader.loadMapData(this.props.project.basemap.mapId);
+        const mapData = DataLoader.load(this.props.project.basemap.mapId);
         const jsx = SvgRenderer.render(this.props.project, mapData);
         const svg = ReactDOMServer.renderToStaticMarkup(jsx);
 
