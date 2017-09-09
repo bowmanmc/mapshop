@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^20.0.3",
     "babel-preset-react": "^6.24.1",
     "cssnano": "^3.10.0",
@@ -46,7 +47,8 @@
     "postsass": "postcss app/styles/bundle.css -c postcss.config.js -o app/styles/bundle.min.css",
     "test": "jest",
     "watch:sass": "nodemon -e scss -w app -x \"npm run sass\"",
-    "watch:test": "nodemon -e js -w app -x \"npm run test\""
+    "watch:test": "nodemon -e js -w app -x \"npm run test\"",
+    "extractTigerStates": "babel-node tools/extractTigerStates.js"
   },
   "jest": {
     "collectCoverage": true,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DataLoader from '../DataLoader';
+import DataLoader from '../../data/loader';
 import SvgRenderer from './SvgRenderer';
 
 
@@ -14,7 +14,7 @@ class MapEditorCanvas extends React.Component {
         const layers = this.props.project.layers;
         const mapData = [];
         layers.forEach(layer => {
-            mapData.push(DataLoader.loadMapData(layer.mapId));
+            mapData.push(DataLoader.load(layer.mapId));
         });
 
         const svg = SvgRenderer.render(this.props.project, mapData);
