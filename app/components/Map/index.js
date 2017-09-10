@@ -11,7 +11,7 @@ class MapEditorCanvas extends React.Component {
     }
 
     render() {
-        const layers = this.props.project.layers;
+        const layers = this.props.project.basemap;
         const mapData = [];
         layers.forEach(layer => {
             mapData.push(DataLoader.load(layer.mapId));

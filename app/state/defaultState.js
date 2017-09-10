@@ -1,6 +1,6 @@
 export default {
     project: {
-        layers: [{
+        basemap: [{
             mapId: 'usa-ohio',
             fillColor: '#ffdd00',
             stroke: null

@@ -12,15 +12,15 @@ class MapEditorToolbar extends React.Component {
     }
 
     onLayerChange(id, updates) {
-        let newLayers = this.props.project.layers.map((layer, idx) => {
+        let newLayers = this.props.project.basemap.map((layer, idx) => {
             if (idx === id) {
-                return Object.assign({}, this.props.project.layers[id], updates);
+                return Object.assign({}, this.props.project.basemap[id], updates);
             }
             return layer;
         });
 
         let changes = Object.assign({}, this.props.project, {
-            layers: newLayers
+            basemap: newLayers
         });
         this.props.onChange(changes);
     }
@@ -29,8 +29,8 @@ class MapEditorToolbar extends React.Component {
         const project = this.props.project;
 
         let layerControls = [];
-        for (let i = 0; i < project.layers.length; i++) {
-            let layer = project.layers[i];
+        for (let i = 0; i < project.basemap.length; i++) {
+            let layer = project.basemap[i];
             layerControls.push(
                 <LayerControls settings={ layer } onChange={ this.onLayerChange } key={ i } id={ i } />
             );

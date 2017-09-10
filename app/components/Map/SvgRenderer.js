@@ -1,8 +1,11 @@
 import React from 'react';
 
 import d3 from 'd3';
-import { geoCentroid, geoConicConformal, geoPath } from 'd3-geo';
+import { geoCentroid, geoPath } from 'd3-geo';
+import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
 import geojsonMerge from 'geojson-merge';
+
+import DataIndex from '../../data';
 
 
 export default {
@@ -11,7 +14,14 @@ export default {
 
         const merged = geojsonMerge(mapData);
 
-        const projection = geoConicConformal();
+        let projection = geoConicConformal(); // default projection
+        const projectionId = DataIndex[project.basemap[0].mapId].projection;
+        if (projectionId) {
+            if (projectionId === 'albers') {
+                projection = geoAlbersUsa();
+            }
+        }
+
         const path = geoPath().projection(projection);
 
         const width = 1000;
@@ -19,7 +29,10 @@ export default {
 
         const centroid = geoCentroid(merged);
         const r = [centroid[0] * -1, centroid[1] * -1];
-        projection.scale(1).translate([0, 0]).rotate(r);
+        projection.scale(1).translate([0, 0]);
+        if (projection.rotate) {
+            projection.rotate(r);
+        }
 
         const b = path.bounds(merged);
         const s = 0.95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
@@ -27,7 +40,7 @@ export default {
         projection.scale(s).translate(t);
 
         const groups = [];
-        project.layers.forEach((layer, i) => {
+        project.basemap.forEach((layer, i) => {
             let styles = {
                 fill: null,
                 stroke: null,

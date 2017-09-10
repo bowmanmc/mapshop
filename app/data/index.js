@@ -2,7 +2,8 @@
 export default {
     'usa-states': {
         name: 'United States of America',
-        file: 'countries/usa/cb_2015_us_state_500k.json'
+        file: 'countries/usa/cb_2015_us_state_500k.json',
+        projection: 'albers'
     },
     'usa-ak': {
         name: 'Alaska',
