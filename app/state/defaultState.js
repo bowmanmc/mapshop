@@ -1,7 +1,7 @@
 export default {
     project: {
         basemap: [{
-            mapId: 'usa-ohio',
+            mapId: 'usa-oh',
             fillColor: '#ffdd00',
             stroke: null
         }]
