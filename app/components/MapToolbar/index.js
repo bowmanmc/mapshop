@@ -39,8 +39,11 @@ class MapEditorToolbar extends React.Component {
         return (
             <div className="MapEditorToolbar">
                 <div className="MapEditorToolbar__item">
-                    <h2>Map Layers</h2>
+                    <h2>Base Map</h2>
                     { layerControls }
+                </div>
+                <div className="MapEditorToolbar__item">
+                    <h2>Data</h2>
                 </div>
             </div>
         );
