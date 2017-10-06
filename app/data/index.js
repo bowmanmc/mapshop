@@ -1,7 +1,12 @@
 
 export default {
+    'usa-counties': {
+        name: 'USA - Counties',
+        file: 'countries/usa/cb_2016_us_county_5m.json',
+        projection: 'albers'
+    },
     'usa-states': {
-        name: 'United States of America',
+        name: 'USA - States',
         //file: 'countries/usa/cb_2015_us_state_500k.json',
         file: 'countries/usa/cb_2015_us_state_5m.json',
         //file: 'countries/usa/cb_2015_us_state_20m.json',

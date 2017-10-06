@@ -1,9 +1,10 @@
 export default {
     project: {
         basemap: [{
-            mapId: 'usa-oh',
+            mapId: 'usa-counties',
             fillColor: '#ffdd00',
-            stroke: null
+            stroke: '#000000',
+            strokeWidth: 1
         }],
         data: [{
             name: 'skyline.oh.tsv',

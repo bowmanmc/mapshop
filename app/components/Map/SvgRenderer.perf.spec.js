@@ -4,7 +4,7 @@ import DataIndex from '../../data';
 import DataLoader from '../../data/loader';
 import SvgRenderer from './SvgRenderer';
 
-const BUDGET = 100; // 100ms max to render a map
+const BUDGET = 5 * 1000; // in ms
 
 describe('SvgRenderer Performance Checks', () => {
 
