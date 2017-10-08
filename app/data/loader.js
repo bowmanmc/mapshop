@@ -1,12 +1,12 @@
 import fs from 'fs';
-import dataIndex from './index';
+import mapIndex from './maps';
 
 
 export default {
 
-    load(mapId) {
+    loadMap(mapId) {
         // todo: this needs to be fixed to work in a packaged app...
-        const details = dataIndex[mapId];
+        const details = mapIndex[mapId];
         const filepath = `${process.cwd()}/app/data/${details.file}`;
         //console.log(`Loading ${filepath}`);
         const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));

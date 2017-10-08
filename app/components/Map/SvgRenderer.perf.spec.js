@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import DataIndex from '../../data';
+import MapIndex from '../../data/maps';
 import DataLoader from '../../data/loader';
 import SvgRenderer from './SvgRenderer';
 
@@ -10,7 +10,7 @@ describe('SvgRenderer Performance Checks', () => {
 
     // Get all maps in the Data Index and render each one with some default styles
     // Make sure all maps render under our performance budget
-    const maps = Object.keys(DataIndex);
+    const maps = Object.keys(MapIndex);
     let project = {
         basemap: [{
             fillColor: '#ffdd00',
@@ -20,8 +20,8 @@ describe('SvgRenderer Performance Checks', () => {
     // Test each map and fail if it doesn't meet our performance requirements
     maps.forEach(mapId => {
         it(`Render ${mapId} in under ${BUDGET}ms`, () => {
-            const mapInfo = DataIndex[mapId];
-            const mapData = DataLoader.load(mapId);
+            const mapInfo = MapIndex[mapId];
+            const mapData = DataLoader.loadMap(mapId);
             project.basemap[0].mapId = mapId;
             const start = moment();
             SvgRenderer.render(project, [mapData]);

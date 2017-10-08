@@ -5,7 +5,7 @@ import { geoCentroid, geoPath } from 'd3-geo';
 import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
 import geojsonMerge from 'geojson-merge';
 
-import DataIndex from '../../data';
+import MapIndex from '../../data/maps';
 
 
 export default {
@@ -15,7 +15,7 @@ export default {
         const merged = geojsonMerge(mapData);
 
         let projection = geoConicConformal(); // default projection
-        const projectionId = DataIndex[project.basemap[0].mapId].projection;
+        const projectionId = MapIndex[project.basemap[0].mapId].projection;
         if (projectionId) {
             if (projectionId === 'albers') {
                 projection = geoAlbersUsa();

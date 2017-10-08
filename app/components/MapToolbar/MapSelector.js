@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-import MapIndex from '../../data';
+import MapIndex from '../../data/maps';
 
 
 class MapSelector extends React.Component {
