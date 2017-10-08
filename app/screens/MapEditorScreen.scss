@@ -3,6 +3,7 @@
     @include screen();
 
     background: $clr-canvas;
+    background-image: url('../images/low_contrast_linen.png');
     display: flex;
     flex-direction: column;
 }

@@ -3,7 +3,6 @@ import { connect }  from 'react-redux';
 
 import AppToolbar from '../components/AppToolbar';
 import Map from '../components/Map';
-import MapToolbar from '../components/MapToolbar';
 import * as actions from '../state/project/actions';
 
 
@@ -26,7 +25,6 @@ class MapEditorScreen extends React.Component {
                     <AppToolbar project={ this.props.project } />
                 </div>
                 <div className="MapEditorScreen__workarea">
-                    <MapToolbar  project={ this.props.project } onChange={ this.onProjectChange } />
                     <Map project={ this.props.project } />
                 </div>
             </div>
