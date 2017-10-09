@@ -8,10 +8,25 @@ class Navbar extends Component {
         return (
             <nav className="Navbar">
                 <ul>
-                    <li>Project</li>
-                    <li>Map</li>
-                    <li>Data</li>
-                    <li>Legend</li>
+                    <li>
+                        <svg><use xlinkHref="images/fa/solid.svg#file-alt"></use></svg>
+                        Project
+                    </li>
+
+                    <li>
+                        <svg><use xlinkHref="images/fa/solid.svg#compass"></use></svg>
+                        Map
+                    </li>
+
+                    <li>
+                        <svg><use xlinkHref="images/fa/solid.svg#database"></use></svg>
+                        Data
+                    </li>
+
+                    <li>
+                        <svg><use xlinkHref="images/fa/solid.svg#list-ul"></use></svg>
+                        Legend
+                    </li>
                 </ul>
             </nav>
         );

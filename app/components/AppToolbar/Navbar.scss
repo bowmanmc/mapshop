@@ -1,8 +1,9 @@
 
 .Navbar {
+    height: 100%;
+    padding-left: 2.0em;
 
     ul {
-        border: 1px solid red;
         display: flex;
         height: 100%;
         list-style: none;
@@ -11,8 +12,34 @@
     }
 
     li {
-        border: 1px solid white;
+        align-items: center;
+        background: transparentize($clr-white, 0.97);
+        border-right: 1px solid $clr-gray-30;
+        color: $clr-gray-80;
+        cursor: pointer;
+        display: flex;
         padding: 1.0em;
+
+        svg {
+            fill: $clr-gray-80;
+            height: 16px;
+            margin-right: 0.5em;
+            width: 16px;
+        }
+
+        &:nth-child(1) {
+            border-left: 1px solid $clr-gray-30;
+        }
+
+        &:hover {
+            background: transparentize($clr-white, 0.92);
+            color: $clr-white;
+
+            svg {
+                fill: $clr-white;
+            }
+        }
+
     }
 
 }
