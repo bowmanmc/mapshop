@@ -7,18 +7,13 @@
     height: 100%;
 
     .AppToolbar__logo {
-        text-align: left;
-        width: 110px;
     }
 
     .AppToolbar__middle {
         flex: 1;
-        text-align: center;
     }
 
     .AppToolbar__right {
-        padding: 1.0em;
-        text-align: right;
     }
 }
 
@@ -57,3 +52,5 @@
         animation: spin 2s infinite cubic-bezier(0.6, 0.2, 0.4, 0.8);
     }
 }
+
+@import './Navbar';

@@ -8,7 +8,8 @@ import fs from 'fs';
 import DataLoader from '../../data/loader';
 import Logo from '../Logo';
 import SvgRenderer from '../Map/SvgRenderer';
-import ExportButton from './ExportButton';
+
+import Navbar from './Navbar';
 
 
 class AppToolbar extends React.Component {
@@ -53,6 +54,7 @@ class AppToolbar extends React.Component {
         });
     }
 
+    //<ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
     render() {
         return (
             <div className="AppToolbar">
@@ -60,9 +62,10 @@ class AppToolbar extends React.Component {
                     <Logo />
                 </div>
                 <div className="AppToolbar__middle">
+                    <Navbar project={this.props.project} />
                 </div>
                 <div className="AppToolbar__right">
-                    <ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
+
                 </div>
             </div>
         );
