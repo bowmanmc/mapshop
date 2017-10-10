@@ -10,6 +10,7 @@ import Logo from '../Logo';
 import SvgRenderer from '../Map/SvgRenderer';
 
 import Navbar from './Navbar';
+import Subnav from './Subnav';
 
 
 class AppToolbar extends React.Component {
@@ -18,10 +19,25 @@ class AppToolbar extends React.Component {
         super(props);
 
         this.state = {
+            active: 'project',
             exporting: false
         };
 
+        this.activate = this.activate.bind(this);
+        this.dismissSubnav = this.dismissSubnav.bind(this);
         this.exportSvg = this.exportSvg.bind(this);
+    }
+
+    activate(item) {
+        this.setState({
+            active: item
+        });
+    }
+
+    dismissSubnav() {
+        this.setState({
+            active: null
+        });
     }
 
     exportSvg() {
@@ -57,16 +73,18 @@ class AppToolbar extends React.Component {
     //<ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
     render() {
         return (
-            <div className="AppToolbar">
-                <div className="AppToolbar__logo">
-                    <Logo />
+            <div>
+                <div className="AppToolbar">
+                    <div className="AppToolbar__logo">
+                        <Logo />
+                    </div>
+                    <div className="AppToolbar__middle">
+                        <Navbar onSelect={this.activate} active={this.state.active} project={this.props.project} />
+                    </div>
+                    <div className="AppToolbar__right">
+                    </div>
                 </div>
-                <div className="AppToolbar__middle">
-                    <Navbar project={this.props.project} />
-                </div>
-                <div className="AppToolbar__right">
-
-                </div>
+                <Subnav active={this.state.active} active={this.state.active} onDismiss={this.dismissSubnav} />
             </div>
         );
     }

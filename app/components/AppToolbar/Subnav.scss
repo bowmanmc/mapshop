@@ -1,0 +1,36 @@
+
+.Subnav {
+    background: $clr-gray-80;
+    border-bottom: 1px solid $clr-gray-90;
+    box-shadow: 0 0 12px transparentize($clr-black, 0.25);
+    height: 350px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    transition: all 0.4s ease-in-out;
+    z-index: 10;
+}
+
+.Subnav__hidden {
+    bottom: -5px;
+    height: 0;
+    overflow: hidden;
+    top: -355px;
+}
+
+
+.Subnav__dismiss {
+    background: transparentize($clr-black, 0.5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.Subnav__dismiss-hidden {
+    display: none;
+}
