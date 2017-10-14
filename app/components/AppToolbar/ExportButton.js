@@ -19,3 +19,35 @@ class ExportButton extends Component {
 }
 
 export default ExportButton;
+
+/*
+exportSvg() {
+    // if we're already exporting, just return
+    if (this.state.exporting) {
+        return;
+    }
+
+    this.setState({exporting: true});
+    const mapData = DataLoader.load(this.props.project.basemap.mapId);
+    const jsx = SvgRenderer.render(this.props.project, mapData);
+    const svg = ReactDOMServer.renderToStaticMarkup(jsx);
+
+    const dialog = remote.dialog;
+    let filename = dialog.showSaveDialog({
+        title: 'Export Map as SVG',
+        defaultPath: 'maptop.svg'
+    });
+
+    if (!filename) {
+        this.setState({exporting: false});
+        return; // user cancelled
+    }
+
+    fs.writeFile(filename, svg, 'utf-8', (err) => {
+        if (err) {
+            console.log(`Error writing file ${filename}`, err);
+        }
+        this.setState({exporting: false});
+    });
+}
+*/

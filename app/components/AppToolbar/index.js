@@ -1,16 +1,7 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-
-import { remote } from 'electron';
-
-import fs from 'fs';
-
-import DataLoader from '../../data/loader';
-import Logo from '../Logo';
-import SvgRenderer from '../Map/SvgRenderer';
 
 import Navbar from './Navbar';
-import Subnav from './Subnav';
+import Subnav from './subnav';
 
 
 class AppToolbar extends React.Component {
@@ -19,13 +10,10 @@ class AppToolbar extends React.Component {
         super(props);
 
         this.state = {
-            active: 'project',
-            exporting: false
+            active: 'project'
         };
 
         this.activate = this.activate.bind(this);
-        this.dismissSubnav = this.dismissSubnav.bind(this);
-        this.exportSvg = this.exportSvg.bind(this);
     }
 
     activate(item) {
@@ -34,48 +22,11 @@ class AppToolbar extends React.Component {
         });
     }
 
-    dismissSubnav() {
-        this.setState({
-            active: null
-        });
-    }
-
-    exportSvg() {
-        // if we're already exporting, just return
-        if (this.state.exporting) {
-            return;
-        }
-
-        this.setState({exporting: true});
-        const mapData = DataLoader.load(this.props.project.basemap.mapId);
-        const jsx = SvgRenderer.render(this.props.project, mapData);
-        const svg = ReactDOMServer.renderToStaticMarkup(jsx);
-
-        const dialog = remote.dialog;
-        let filename = dialog.showSaveDialog({
-            title: 'Export Map as SVG',
-            defaultPath: 'maptop.svg'
-        });
-
-        if (!filename) {
-            this.setState({exporting: false});
-            return; // user cancelled
-        }
-
-        fs.writeFile(filename, svg, 'utf-8', (err) => {
-            if (err) {
-                console.log(`Error writing file ${filename}`, err);
-            }
-            this.setState({exporting: false});
-        });
-    }
-
-    //<ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
     render() {
         return (
             <div className="AppToolbar">
-                <Navbar onSelect={this.activate} active={this.state.active} project={this.props.project} />
-                <Subnav active={this.state.active} active={this.state.active} onDismiss={this.dismissSubnav} />
+                <Navbar onSelect={this.activate} active={this.state.active}  />
+                <Subnav active={this.state.active} active={this.state.active} />
             </div>
         );
     }

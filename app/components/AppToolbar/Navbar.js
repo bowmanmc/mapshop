@@ -3,53 +3,38 @@ import React, { Component } from 'react';
 import Logo from '../Logo';
 
 
-class Navbar extends Component {
+const Navbar = (props) => {
 
-    constructor(props, context) {
-        super(props, context);
+    return (
+        <nav className="Navbar">
+            <Logo />
+            <ul>
+                <li className={props.active === 'project' ? 'active-item': ''}
+                    onClick={() => {props.onSelect('project')}}>
+                    <svg><use xlinkHref="images/fa/solid.svg#file-alt"></use></svg>
+                    Project
+                </li>
 
-        this.selectItem = this.selectItem.bind(this);
-    }
+                <li className={props.active === 'map' ? 'active-item': ''}
+                    onClick={() => {props.onSelect('map')}}>
+                    <svg><use xlinkHref="images/fa/solid.svg#compass"></use></svg>
+                    Map
+                </li>
 
-    selectItem(item) {
-        if (item === this.props.active) {
-            item = null;
-        }
-        this.props.onSelect(item);
-    }
+                <li className={props.active === 'data' ? 'active-item': ''}
+                    onClick={() => {props.onSelect('data')}}>
+                    <svg><use xlinkHref="images/fa/solid.svg#database"></use></svg>
+                    Data
+                </li>
 
-    render() {
-        return (
-            <nav className="Navbar">
-                <Logo />
-                <ul>
-                    <li className={this.props.active === 'project' ? 'active-item': ''}
-                        onClick={() => {this.selectItem('project')}}>
-                        <svg><use xlinkHref="images/fa/solid.svg#file-alt"></use></svg>
-                        Project
-                    </li>
-
-                    <li className={this.props.active === 'map' ? 'active-item': ''}
-                        onClick={() => {this.selectItem('map')}}>
-                        <svg><use xlinkHref="images/fa/solid.svg#compass"></use></svg>
-                        Map
-                    </li>
-
-                    <li className={this.props.active === 'data' ? 'active-item': ''}
-                        onClick={() => {this.selectItem('data')}}>
-                        <svg><use xlinkHref="images/fa/solid.svg#database"></use></svg>
-                        Data
-                    </li>
-
-                    <li className={this.props.active === 'legend' ? 'active-item': ''}
-                        onClick={() => {this.selectItem('legend')}}>
-                        <svg><use xlinkHref="images/fa/solid.svg#list-ul"></use></svg>
-                        Legend
-                    </li>
-                </ul>
-            </nav>
-        );
-    }
+                <li className={props.active === 'legend' ? 'active-item': ''}
+                    onClick={() => {props.onSelect('legend')}}>
+                    <svg><use xlinkHref="images/fa/solid.svg#list-ul"></use></svg>
+                    Legend
+                </li>
+            </ul>
+        </nav>
+    );
 }
 
 export default Navbar;
