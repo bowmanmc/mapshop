@@ -1,10 +1,9 @@
 
 .Subnav {
-    //background: $clr-gray-80;
     background: $clr-gray-30;
     border-right: 1px solid $clr-gray-40;
     color: $clr-gray-98;
-    padding: 2.0em;
+    padding: 1.0em;
     width: 250px;
 }
 
@@ -15,3 +14,5 @@
 .Subnav__item-hidden {
     display: none;
 }
+
+@import './FormInput';

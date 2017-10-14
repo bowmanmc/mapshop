@@ -6,13 +6,34 @@ class ProjectDetails extends Component {
 
     constructor(props, context) {
         super(props, context);
+
+        this.onFieldChange = this.onFieldChange.bind(this);
+    }
+
+    onFieldChange(evt) {
+
     }
 
     render() {
         return (
-            <div className='ProjectDetails'>
-                <label>Title</label>
-                { this.props.project.title }
+            <div className="ProjectDetails">
+                <div className="FormInput">
+                    <label>Map Title</label>
+                    <input onChange={this.onFieldChange}
+                        type="text"
+                        name="title"
+                        placeholder="Map Title"
+                        value={this.props.project.title} />
+                </div>
+
+                <div className="FormInput">
+                    <label>Author</label>
+                    <input onChange={this.onFieldChange}
+                        type="text"
+                        name="author"
+                        placeholder="Author"
+                        value={this.props.project.author} />
+                </div>
             </div>
         );
     }
