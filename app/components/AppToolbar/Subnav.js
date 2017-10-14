@@ -8,20 +8,19 @@ class Subnav extends Component {
     }
 
     render() {
-        console.log('Active: ' + this.props.active);
         return (
             <div>
-                <div className={this.props.active ? 'Subnav': 'Subnav__hidden'}>
-                    <div className="Subnav__item">
-                        <h2>Project</h2>
+                <div className='Subnav'>
+                    <div className={this.props.active === 'project' ? 'Subnav__item': 'Subnav__item-hidden'}>
+                        <label>Title</label>
                     </div>
-                    <div className="Subnav__item">
+                    <div className={this.props.active === 'map' ? 'Subnav__item': 'Subnav__item-hidden'}>
                         <h2>Map</h2>
                     </div>
-                    <div className="Subnav__item">
+                    <div className={this.props.active === 'data' ? 'Subnav__item': 'Subnav__item-hidden'}>
                         <h2>Data</h2>
                     </div>
-                    <div className="Subnav__item">
+                    <div className={this.props.active === 'legend' ? 'Subnav__item': 'Subnav__item-hidden'}>
                         <h2>Legend</h2>
                     </div>
                 </div>

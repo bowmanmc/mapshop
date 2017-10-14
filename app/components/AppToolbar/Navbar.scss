@@ -1,6 +1,7 @@
 
 .HighlightItem {
-    background: transparentize($clr-white, 0.92);
+    //background: transparentize($clr-white, 0.92);
+    background: $clr-gray-30;
     color: $clr-white;
 
     svg {
@@ -24,8 +25,8 @@
     li {
         align-items: center;
         background: transparentize($clr-white, 0.97);
-        border-bottom: 1px solid $clr-gray-30;
-        border-right: 1px solid transparent;
+        border-bottom: 1px solid $clr-gray-25;
+        border-left: 2px solid transparent;
         color: $clr-gray-80;
         cursor: pointer;
         display: flex;
@@ -36,7 +37,13 @@
 
         &.active-item {
             @extend .HighlightItem;
-            border-right: 1px solid $clr-highlight;
+            //border-right: 1px solid $clr-gray-30;
+            border-left: 2px solid $clr-highlight;
+
+            &:hover {
+                @extend .HighlightItem;
+                border-left: 2px solid $clr-highlight;
+            }
         }
 
         svg {
@@ -53,6 +60,7 @@
 
         &:hover {
             @extend .HighlightItem;
+            background: $clr-gray-25;
         }
 
     }
