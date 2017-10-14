@@ -73,17 +73,8 @@ class AppToolbar extends React.Component {
     //<ExportButton isExporting={ this.state.exporting } onClick={ this.exportSvg } />
     render() {
         return (
-            <div>
-                <div className="AppToolbar">
-                    <div className="AppToolbar__logo">
-                        <Logo />
-                    </div>
-                    <div className="AppToolbar__middle">
-                        <Navbar onSelect={this.activate} active={this.state.active} project={this.props.project} />
-                    </div>
-                    <div className="AppToolbar__right">
-                    </div>
-                </div>
+            <div className="AppToolbar">
+                <Navbar onSelect={this.activate} active={this.state.active} project={this.props.project} />
                 <Subnav active={this.state.active} active={this.state.active} onDismiss={this.dismissSubnav} />
             </div>
         );

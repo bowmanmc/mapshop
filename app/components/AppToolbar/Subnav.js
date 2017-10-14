@@ -9,22 +9,19 @@ class Subnav extends Component {
 
     render() {
         return (
-            <div>
-                <div className='Subnav'>
-                    <div className={this.props.active === 'project' ? 'Subnav__item': 'Subnav__item-hidden'}>
-                        <label>Title</label>
-                    </div>
-                    <div className={this.props.active === 'map' ? 'Subnav__item': 'Subnav__item-hidden'}>
-                        <h2>Map</h2>
-                    </div>
-                    <div className={this.props.active === 'data' ? 'Subnav__item': 'Subnav__item-hidden'}>
-                        <h2>Data</h2>
-                    </div>
-                    <div className={this.props.active === 'legend' ? 'Subnav__item': 'Subnav__item-hidden'}>
-                        <h2>Legend</h2>
-                    </div>
+            <div className='Subnav'>
+                <div className={this.props.active === 'project' ? 'Subnav__item': 'Subnav__item-hidden'}>
+                    <label>Title</label>
                 </div>
-                <div className={this.props.active ? 'Subnav__dismiss': 'Subnav__dismiss-hidden'} onClick={this.props.onDismiss}></div>
+                <div className={this.props.active === 'map' ? 'Subnav__item': 'Subnav__item-hidden'}>
+                    <h2>Map</h2>
+                </div>
+                <div className={this.props.active === 'data' ? 'Subnav__item': 'Subnav__item-hidden'}>
+                    <h2>Data</h2>
+                </div>
+                <div className={this.props.active === 'legend' ? 'Subnav__item': 'Subnav__item-hidden'}>
+                    <h2>Legend</h2>
+                </div>
             </div>
         );
     }

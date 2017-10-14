@@ -3,32 +3,9 @@
     //background: $clr-gray-80;
     background: $clr-gray-30;
     border-right: 1px solid $clr-gray-40;
-    bottom: 0;
-    box-shadow: 0 0 12px transparentize($clr-black, 0.25);
     color: $clr-gray-98;
-    left: 0;
-    overflow: hidden;
     padding: 2.0em;
-    padding-left: 100px;
-    position: absolute;
-    top: 0;
     width: 250px;
-    z-index: 10;
-}
-
-.Subnav__dismiss {
-    background: transparentize($clr-black, 0.5);
-    bottom: 0;
-    display: none;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 5;
-}
-
-.Subnav__dismiss-hidden {
-    display: none;
 }
 
 .Subnav__item {

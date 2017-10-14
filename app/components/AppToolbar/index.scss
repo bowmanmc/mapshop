@@ -1,59 +1,9 @@
 
 .AppToolbar {
-    background-color: $clr-chrome;
-    bottom: 0;
+    box-shadow: 0 0 12px transparentize($clr-black, 0.25);
     display: flex;
-    flex-direction: column;
-    left: 0;
-    position: absolute;
-    top: 0;
-    z-index: 20;
-
-    .AppToolbar__logo {
-    }
-
-    .AppToolbar__middle {
-        flex: 1;
-    }
-
-    .AppToolbar__right {
-    }
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(1440deg);
-    }
-}
-
-.AppToolbar__btn {
-    background: $clr-gray-30;
-    border: 1px solid $clr-gray-20;
-    border-radius: 0.25em;
-    color: $clr-gray-90;
-    cursor: pointer;
-    padding: 0.5em 0.75em;
-
-    &:hover {
-        background: $clr-gray-40;
-        color: $clr-white;
-
-        svg {
-            fill: $clr-white;
-        }
-    }
-
-    svg {
-        fill: $clr-gray-90;
-        height: 18px;
-        margin: 0 0.5em;
-        vertical-align: text-top;
-        width: 18px;
-    }
-
-    svg.spinner {
-        animation: spin 2s infinite cubic-bezier(0.6, 0.2, 0.4, 0.8);
-    }
+    flex-direction: row;
+    height: 100%;
 }
 
 @import './Navbar';

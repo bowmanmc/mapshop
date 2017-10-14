@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Logo from '../Logo';
+
 
 class Navbar extends Component {
 
@@ -19,6 +21,7 @@ class Navbar extends Component {
     render() {
         return (
             <nav className="Navbar">
+                <Logo />
                 <ul>
                     <li className={this.props.active === 'project' ? 'active-item': ''}
                         onClick={() => {this.selectItem('project')}}>

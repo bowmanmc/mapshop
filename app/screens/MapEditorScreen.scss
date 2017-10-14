@@ -5,11 +5,12 @@
     background: $clr-canvas;
     background-image: url('../images/low_contrast_linen.png');
     display: flex;
-    flex-direction: column;
 }
 
 .MapEditorScreen__apptoolbar {
-
+    align-items: flex-start;
+    background-color: $clr-chrome;
+    text-align: left;
 }
 
 .MapEditorScreen__workarea {
