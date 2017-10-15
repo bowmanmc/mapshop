@@ -6,13 +6,13 @@ export default {
         company: 'Dayton Geoinformatics',
         dateCeated: null,
         lastUpdated: null
+    },
+    basemap: {
+        mapId: 'usa-counties',
+        fillColor: '#b1e5d9',
+        stroke: '#000000',
+        strokeWidth: 0.5
     }
-    // basemap: [{
-    //     mapId: 'usa-counties',
-    //     fillColor: '#ffdd00',
-    //     stroke: '#000000',
-    //     strokeWidth: 1
-    // }],
     // data: [{
     //     name: 'skyline.oh.tsv',
     //     fillColor: '#226699',

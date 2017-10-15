@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import BasemapDetails from './BasemapDetails';
 import ProjectDetails from './ProjectDetails';
 
 
@@ -11,7 +12,7 @@ const Subnav = (props) => {
                 <ProjectDetails />
             </div>
             <div className={props.active === 'map' ? 'Subnav__item': 'Subnav__item-hidden'}>
-                <h2>Map</h2>
+                <BasemapDetails />
             </div>
             <div className={props.active === 'data' ? 'Subnav__item': 'Subnav__item-hidden'}>
                 <h2>Data</h2>
