@@ -1,7 +1,11 @@
 export default {
     project: {
-        title: 'Untitled',
-        author: null
+        title: '2016 Unemployment by County',
+        author: 'Michael Bowman',
+        email: 'bowmanmc@gmail.com',
+        company: 'Dayton Geoinformatics',
+        dateCeated: null,
+        lastUpdated: null
     }
     // basemap: [{
     //     mapId: 'usa-counties',

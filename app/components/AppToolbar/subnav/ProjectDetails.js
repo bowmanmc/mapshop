@@ -34,6 +34,25 @@ class ProjectDetails extends Component {
                         placeholder="Author"
                         value={this.props.project.author} />
                 </div>
+
+                <div className="FormInput">
+                    <label>Email Address</label>
+                    <input onChange={this.onFieldChange}
+                        type="email"
+                        name="email"
+                        placeholder="Email Address"
+                        value={this.props.project.email} />
+                </div>
+
+                <div className="FormInput">
+                    <label>Company</label>
+                    <input onChange={this.onFieldChange}
+                        type="text"
+                        name="company"
+                        placeholder="Company"
+                        value={this.props.project.company} />
+                </div>
+
             </div>
         );
     }
