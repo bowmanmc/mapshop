@@ -11,7 +11,7 @@ export default {
         mapId: 'usa-counties',
         fillColor: '#b1e5d9',
         stroke: '#000000',
-        strokeWidth: 0.5
+        strokeWidth: 1
     }
     // data: [{
     //     name: 'skyline.oh.tsv',

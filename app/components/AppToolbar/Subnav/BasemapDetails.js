@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Slider from 'rc-slider';
+
+import ColorPicker from '../ColorPicker';
 import MapSelector from '../MapSelector';
 
 
@@ -28,12 +31,35 @@ class BasemapDetails extends Component {
                 </div>
 
                 <div className="FormInput">
-                    <label>Map Title</label>
-                    <input onChange={this.onFieldChange}
-                        type="text"
-                        name="title"
-                        placeholder="Map Title"
-                        value={'test'} />
+                    <label>Fill Color</label>
+                    <ColorPicker
+                        name='fillColor'
+                        color={ basemap.fillColor }
+                        onChange={ this.onFieldChange } />
+                </div>
+
+                <div className="FormInput">
+                    <label>Stroke Color</label>
+                    <ColorPicker
+                        name='strokeColor'
+                        color={ basemap.strokeColor }
+                        onChange={ this.onFieldChange } />
+                </div>
+
+                <div className="FormInput">
+                    <label>Stroke Width</label>
+                    <div className="FormInput__split-ctrl">
+                        <div className="FormInput__split-ctrl-picker">
+                            <Slider
+                                min={ 0 }
+                                max={ 20 }
+                                step={ 0.5 }
+                                defaultValue={ basemap.strokeWidth } />
+                        </div>
+                        <div className="FormInput__split-ctrl-val">
+                            { basemap.strokeWidth }
+                        </div>
+                    </div>
                 </div>
             </div>
         );

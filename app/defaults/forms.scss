@@ -41,6 +41,41 @@ $font-size: 14px;
     }
 }
 
+.FormInput__split-ctrl {
+    display: flex;
+}
+
+.FormInput__split-ctrl-picker {
+    flex: 1;
+}
+
+.FormInput__split-ctrl-val {
+    padding-left: 1.0em;
+}
+
+// RC Slider Overrides
+.rc-slider-handle {
+    background-color: $clr-gray-60;
+    border-color: $clr-gray-60;
+    box-shadow: 0 0 3px transparentize($clr-black, 0.5);
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: $clr-gray-70;
+        border-color: $clr-gray-70;
+        box-shadow: 0 0 3px transparentize($clr-black, 0.5);
+    }
+}
+
+.rc-slider-rail {
+    background: $clr-gray-20;
+}
+
+.rc-slider-track {
+    background-color: $clr-gray-50;
+}
+
 // React Select Overrides
 .Select-arrow-zone {
     .Select-arrow {
