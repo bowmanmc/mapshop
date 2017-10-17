@@ -5,6 +5,14 @@ import Logo from '../Logo';
 
 const Navbar = (props) => {
 
+/*
+<li className={props.active === 'legend' ? 'active-item': ''}
+    onClick={() => {props.onSelect('legend')}}>
+    <svg><use xlinkHref="images/fa/solid.svg#list-ul"></use></svg>
+    Legend
+</li>
+*/
+
     return (
         <nav className="Navbar">
             <Logo />
@@ -25,12 +33,6 @@ const Navbar = (props) => {
                     onClick={() => {props.onSelect('data')}}>
                     <svg><use xlinkHref="images/fa/solid.svg#database"></use></svg>
                     Data
-                </li>
-
-                <li className={props.active === 'legend' ? 'active-item': ''}
-                    onClick={() => {props.onSelect('legend')}}>
-                    <svg><use xlinkHref="images/fa/solid.svg#list-ul"></use></svg>
-                    Legend
                 </li>
             </ul>
         </nav>
