@@ -2,6 +2,7 @@ import React from 'react';
 
 import AppToolbar from '../components/AppToolbar';
 import Map from '../components/Map';
+import StateOverlay from '../components/StateOverlay';
 
 
 const MapEditorScreen = () => {
@@ -13,7 +14,7 @@ const MapEditorScreen = () => {
                 <AppToolbar />
             </div>
             <div className="MapEditorScreen__workarea">
-
+                <StateOverlay />
             </div>
         </div>
     );

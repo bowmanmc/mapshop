@@ -1,0 +1,16 @@
+
+.StateOverlay {
+    background: transparentize($clr-white, 0.90);
+    border: 1px solid $clr-gray-50;
+    border-bottom: none;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    bottom: 0;
+    box-shadow: 0 0 7px transparentize($clr-black, 0.5);
+    color: $clr-white;
+    left: 10%;
+    padding: 1.0em;
+    position: absolute;
+    right: 10%;
+    text-shadow: 0 1px 0 $clr-black;
+}
