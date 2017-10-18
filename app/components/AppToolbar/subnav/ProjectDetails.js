@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import * as actions from '../../../state/project/actions';
+
 
 class ProjectDetails extends Component {
 
@@ -11,7 +13,9 @@ class ProjectDetails extends Component {
     }
 
     onFieldChange(evt) {
-
+        let changes = {};
+        changes[evt.target.name] = evt.target.value;
+        this.props.dispatchEditProject(changes);
     }
 
     render() {
