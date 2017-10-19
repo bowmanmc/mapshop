@@ -6,7 +6,7 @@ import defaultState from '../defaultState';
 export default function basemap(state = defaultState.basemap, action) {
     switch (action.type) {
         case types.BASEMAP_EDIT:
-            return Object.assign({}, state, action.basemap);
+            return Object.assign({}, state, action.changes);
         default:
             return state;
     }

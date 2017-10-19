@@ -3,7 +3,7 @@ export const types = {
 };
 
 
-export const editProject = (newProject) => ({
+export const editProject = (changes) => ({
     type: types.PROJECT_EDIT,
-    project: newProject
+    changes: changes
 });

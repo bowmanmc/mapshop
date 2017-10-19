@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import Slider from 'rc-slider';
+
+import * as actions from '../../../state/basemap/actions';
 
 import ColorPicker from '../ColorPicker';
 import MapSelector from '../MapSelector';
@@ -16,7 +17,11 @@ class BasemapDetails extends Component {
     }
 
     onFieldChange(evt) {
+        console.log('Change: ' + JSON.stringify(evt));
 
+        let changes = {};
+        changes[evt.name] = evt.value;
+        this.props.dispatchEditBasemap(changes);
     }
 
     render() {
@@ -27,7 +32,12 @@ class BasemapDetails extends Component {
 
                 <div className="FormInput">
                     <label>Base Map</label>
-                    <MapSelector value={basemap.mapId} onChange={this.onFieldChange} />
+                    <MapSelector value={basemap.mapId} onChange={(selected) => {
+                        this.onFieldChange({
+                            name: 'mapId',
+                            value: selected.value
+                        });
+                    }} />
                 </div>
 
                 <div className="FormInput">
@@ -54,7 +64,13 @@ class BasemapDetails extends Component {
                                 min={ 0 }
                                 max={ 20 }
                                 step={ 0.5 }
-                                defaultValue={ basemap.strokeWidth } />
+                                defaultValue={ basemap.strokeWidth }
+                                onChange={(newVal) => {
+                                    this.onFieldChange({
+                                        name: 'strokeWidth',
+                                        value: newVal
+                                    });
+                                }}/>
                         </div>
                         <div className="FormInput__split-ctrl-val">
                             { basemap.strokeWidth }
@@ -74,7 +90,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatchEditProject: (changes) => {
+        dispatchEditBasemap: (changes) => {
             dispatch(actions.editBasemap(changes));
         }
     };

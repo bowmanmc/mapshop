@@ -18,7 +18,6 @@ class ColorPicker extends React.Component {
     }
 
     handleChange(color) {
-        console.log('Color: ' + JSON.stringify(color));
         this.props.onChange({
             name: this.props.name,
             value: color.hex

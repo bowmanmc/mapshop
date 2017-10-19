@@ -10,7 +10,7 @@ class AppToolbar extends React.Component {
         super(props);
 
         this.state = {
-            active: 'project'
+            active: 'map'
         };
 
         this.activate = this.activate.bind(this);
