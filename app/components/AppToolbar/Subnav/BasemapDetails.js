@@ -17,8 +17,6 @@ class BasemapDetails extends Component {
     }
 
     onFieldChange(evt) {
-        console.log('Change: ' + JSON.stringify(evt));
-
         let changes = {};
         changes[evt.name] = evt.value;
         this.props.dispatchEditBasemap(changes);
