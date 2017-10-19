@@ -12,9 +12,17 @@ class ColorPicker extends React.Component {
             pickerOpen: false
         };
 
+        this.clearColor = this.clearColor.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
+    }
+
+    clearColor() {
+        this.props.onChange({
+            name: this.props.name,
+            value: 'none'
+        });
     }
 
     handleChange(color) {
@@ -51,25 +59,28 @@ class ColorPicker extends React.Component {
         };
 
         const btnStyle = {
-            background: 'linear-gradient(45deg, white 48%, red 48%, white 52%)'
+            background: 'transparent'
         };
 
-        let pickerInitialColor = '#ffdd00';
-        if (this.props.color) {
+        let pickerInitialColor = '#b1e5d9';
+        if (this.props.color && this.props.color.startsWith('#')) {
             btnStyle.background = `${this.props.color}`;
             pickerInitialColor = `${this.props.color}`;
         }
 
         return (
-            <span>
-                <div className="ColorPicker" style={ btnStyle } onClick={ this.handleClick } />
+            <div className="ColorPicker">
+                <div className="ColorPicker__color" style={ btnStyle } onClick={ this.handleClick } />
+                <div className="ColorPicker__delete" onClick={ this.clearColor }>
+                    <svg><use xlinkHref="images/fa/solid.svg#trash"></use></svg>
+                </div>
                 { this.state.pickerOpen ?
                     <div style={ popover }>
                         <div style={ cover } onClick={ this.handleClose } />
                         <SketchPicker disableAlpha={true} color={ pickerInitialColor } onChange={ this.handleChange } />
                     </div> : null
                 }
-            </span>
+            </div>
         );
     }
 };

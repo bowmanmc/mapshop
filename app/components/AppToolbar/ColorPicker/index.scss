@@ -1,15 +1,58 @@
 
+$cp-border: 3px;
 $cp-size: 36px;
 
 .ColorPicker {
-    border-radius: 3px;
-    cursor: pointer;
-    display: inline-block;
-    height: $cp-size;
-    width: $cp-size;
+    // border: 1px solid transparent;
+    // border-bottom: 1px solid $clr-gray-35;
+    // border-radius: $cp-border;
+
+    display: flex;
 }
 
-.ColorPicker__value {
+.ColorPicker__color {
+    border: 1px solid $clr-gray-25;
+    border-bottom: 1px solid $clr-gray-35;
+    border-bottom-left-radius: $cp-border;
+    border-right: none;
+    border-top-left-radius: $cp-border;
+    box-shadow: inset 0 1px 2px transparentize($clr-black, 0.4), 0 -1px 1px $clr-gray-30, 0 1px 0 $clr-gray-30;
     cursor: pointer;
-    font-family: $fontstack-mono;
+    display: inline-block;
+    flex: 1;
+    height: $cp-size;
+    //width: $cp-size;
+    width: 100%;
+}
+
+.ColorPicker__delete {
+    align-items: center;
+    background: $clr-gray-20;
+    border: 1px solid $clr-gray-20;
+    border-bottom: 1px solid $clr-gray-35;
+    border-bottom-right-radius: $cp-border;
+    border-left: none;
+    border-top-right-radius: $cp-border;
+    box-shadow: inset 0 1px 2px transparentize($clr-black, 0.4), 0 -1px 1px $clr-gray-30, 0 1px 0 $clr-gray-30;
+    color: $clr-gray-85;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition: all 0.35s ease-in-out;
+    width: $cp-size;
+
+    svg {
+        fill: $clr-gray-85;
+        height: 12px;
+        transition: all 0.35s ease-in-out;
+        width: 12px;
+    }
+
+    &:hover {
+        background: $clr-gray-25;
+
+        svg {
+            fill: $clr-white;
+        }
+    }
 }

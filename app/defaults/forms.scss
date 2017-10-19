@@ -50,7 +50,10 @@ $font-size: 14px;
 }
 
 .FormInput__split-ctrl-val {
+    font-size: 10px;
+    min-width: 30px;
     padding-left: 1.0em;
+    text-align: center;
 }
 
 // RC Slider Overrides
@@ -95,6 +98,7 @@ $font-size: 14px;
     border-top: none;
     box-shadow: inset 0 1px 2px transparentize($clr-black, 0.4), 0 -1px 1px $clr-gray-30, 0 1px 0 $clr-gray-30;
     color: $clr-gray-85;
+    cursor: pointer;
     font-size: $font-size;
 
     &:hover {

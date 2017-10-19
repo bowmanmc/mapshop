@@ -71,7 +71,7 @@ class BasemapDetails extends Component {
                                 }}/>
                         </div>
                         <div className="FormInput__split-ctrl-val">
-                            { basemap.strokeWidth }
+                            { basemap.strokeWidth.toFixed(1) }
                         </div>
                     </div>
                 </div>
