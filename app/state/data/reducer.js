@@ -6,7 +6,7 @@ import defaultState from '../defaultState';
 export default function data(state = defaultState.data, action) {
     switch (action.type) {
         case types.DATA_EDIT:
-            return Object.assign({}, state, action.data);
+            return Object.assign({}, state, action.changes);
         default:
             return state;
     }
