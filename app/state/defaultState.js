@@ -6,11 +6,10 @@ export default {
         strokeWidth: 1
     },
     data: {
-        filename: 'skyline.csv',
-        filepath: 'data',
+        filepath: 'data/skyline.csv',
         renderType: 'dot',
         dotRadius: 3,
-        dotColor: '#226699',
+        dotColor: '#4e5b66',
         choroplethNumClasses: 7,
         choroplethColorRamp: []
     },

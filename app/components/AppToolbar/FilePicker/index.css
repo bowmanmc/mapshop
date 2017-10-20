@@ -1,0 +1,8 @@
+
+.FilePicker {
+    // Hide the real file input since it's ugly
+    input {
+        left: 9999px;
+        position: absolute;
+    }
+}

@@ -6,6 +6,7 @@ import Slider from 'rc-slider';
 import * as actions from '../../../state/data/actions';
 
 import ColorPicker from '../ColorPicker';
+import FilePicker from '../FilePicker';
 
 
 const DATA_TYPES = [{
@@ -21,7 +22,7 @@ class DataDetails extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.onFieldCheange = this.onFieldChange.bind(this);
+        this.onFieldChange = this.onFieldChange.bind(this);
     }
 
     onFieldChange(evt) {
@@ -96,7 +97,9 @@ class DataDetails extends Component {
 
                 <div className="FormInput">
                     <label>Data File</label>
-                    <input type="file" />
+                    <FilePicker
+                        filepath={ data.filepath }
+                        onChange={ this.onFieldChange } />
                 </div>
 
                 <div className="FormInput">

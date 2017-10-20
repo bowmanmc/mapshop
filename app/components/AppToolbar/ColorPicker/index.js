@@ -69,9 +69,9 @@ class ColorPicker extends React.Component {
         }
 
         return (
-            <div className="ColorPicker">
-                <div className="ColorPicker__color" style={ btnStyle } onClick={ this.handleClick } />
-                <div className="ColorPicker__delete" onClick={ this.clearColor }>
+            <div className="ColorPicker SplitPicker">
+                <div className="SplitPicker-picker" style={ btnStyle } onClick={ this.handleClick } />
+                <div className="SplitPicker-button" onClick={ this.clearColor }>
                     <svg><use xlinkHref="images/fa/solid.svg#trash"></use></svg>
                 </div>
                 { this.state.pickerOpen ?
