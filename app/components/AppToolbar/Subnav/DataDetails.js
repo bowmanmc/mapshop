@@ -98,8 +98,9 @@ class DataDetails extends Component {
                 <div className="FormInput">
                     <label>Data File</label>
                     <FilePicker
-                        filepath={ data.filepath }
-                        onChange={ this.onFieldChange } />
+                        value={ data.filepath }
+                        onChange={ this.onFieldChange }
+                        name="filepath" />
                 </div>
 
                 <div className="FormInput">
