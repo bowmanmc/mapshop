@@ -8,6 +8,9 @@ import * as actions from '../../../state/data/actions';
 import ColorPicker from '../ColorPicker';
 import FilePicker from '../FilePicker';
 
+import ChoroplethMapDetails from './ChoroplethMapDetails';
+import DotMapDetails from './DotMapDetails';
+
 
 const DATA_TYPES = [{
     label: 'Dot',
@@ -26,59 +29,9 @@ class DataDetails extends Component {
     }
 
     onFieldChange(evt) {
-        console.log(`Data Changes: ${JSON.stringify(evt)}`);
         let changes = {};
         changes[evt.name] = evt.value;
         this.props.dispatchEditData(changes);
-    }
-
-    renderDotAttrs(data) {
-        return (
-            <div className="DataDetails__dot">
-                <div className="FormInput">
-                    <label>Dot Radius</label>
-                    <div className="FormInput__split-ctrl">
-                        <div className="FormInput__split-ctrl-picker">
-                            <Slider
-                                min={ 0 }
-                                max={ 10 }
-                                defaultValue={ data.dotRadius }
-                                onChange={(newVal) => {
-                                    this.onFieldChange({
-                                        name: 'dotRadius',
-                                        value: newVal
-                                    });
-                                }}/>
-                        </div>
-                        <div className="FormInput__split-ctrl-val">
-                            { data.dotRadius }
-                        </div>
-                    </div>
-                </div>
-
-                <div className="FormInput">
-                    <label>Dot Color</label>
-                    <ColorPicker
-                        name='dotColor'
-                        color={ data.dotColor }
-                        onChange={ this.onFieldChange } />
-                </div>
-            </div>
-        );
-    }
-
-    renderChoroplethAttrs(data) {
-        return (
-            <div className="DataDetails__choropleth">
-                <div className="FormInput">
-                    <label>Number of Classes</label>
-                </div>
-
-                <div className="FormInput">
-                    <label>Color Ramp</label>
-                </div>
-            </div>
-        );
     }
 
     render() {
@@ -86,10 +39,10 @@ class DataDetails extends Component {
 
         let attrs = null;
         if (data.renderType === 'dot') {
-            attrs = this.renderDotAttrs(data);
+            attrs = <DotMapDetails data={ data } onChange={ this.onFieldChange } />
         }
         else {
-            attrs = this.renderChoroplethAttrs(data);
+            attrs = <ChoroplethMapDetails data={ data } onChange={ this.onFieldChange } />
         }
 
         return (
