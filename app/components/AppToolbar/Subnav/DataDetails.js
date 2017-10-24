@@ -25,7 +25,13 @@ class DataDetails extends Component {
     constructor(props, context) {
         super(props, context);
 
+        this.onDataFileChange = this.onDataFileChange.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
+    }
+
+    onDataFileChange(evt) {
+        // Update file dependent attrs (column indexes)
+        this.onFieldChange(evt);
     }
 
     onFieldChange(evt) {
@@ -52,7 +58,7 @@ class DataDetails extends Component {
                     <label>Data File</label>
                     <FilePicker
                         value={ data.filepath }
-                        onChange={ this.onFieldChange }
+                        onChange={ this.onDataFileChange }
                         name="filepath" />
                 </div>
 
