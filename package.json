@@ -5,6 +5,7 @@
   "dependencies": {
     "d3": "^4.9.1",
     "d3-geo-projection": "^2.1.2",
+    "firstline": "^1.2.1",
     "geojson-merge": "^0.3.0",
     "moment": "^2.18.1",
     "rc-slider": "^8.3.1",

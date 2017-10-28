@@ -3,6 +3,7 @@ import Select from 'react-select';
 import Slider from 'rc-slider';
 
 import ColorPicker from '../ColorPicker';
+import DataFileUtils from './DataFileUtils';
 
 
 class DotMapDetails extends Component {
@@ -10,24 +11,24 @@ class DotMapDetails extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.getFileInfo = this.getFileInfo.bind(this);
-    }
-
-    getFileInfo(data) {
-        let fileInfo = {
+        this.state = {
             columns: []
         };
+    }
 
-        // is there a dataFile present?
-
-        return fileInfo;
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.data.filepath !== this.props.data.filepath) {
+            let comp = this;
+            DataFileUtils.getColumns(nextProps.data.filepath).then(cols => {
+                console.log(`Updating columns for ${nextProps.data.filepath} to ${JSON.stringify(cols)}`);
+                comp.setState({columns: cols});
+            });
+        }
     }
 
     render() {
         const data = this.props.data;
-
-        const fileInfo = this.getFileInfo(data);
-
+        console.log('Rendering DotMapDetails with columns: ' + JSON.stringify(this.state.columns));
         return (
             <div className="DotMapDetails">
                 <div className="FormInput">
@@ -65,10 +66,10 @@ class DotMapDetails extends Component {
                         name="dotColumnLatitude"
                         clearable={false}
                         value={data.dotColumnLatitude}
-                        options={fileInfo.columns}
+                        options={this.state.columns}
                         searchable={false}
                         onChange={(selected) => {
-                            this.props.onFieldChange({
+                            this.props.onChange({
                                 name: 'dotColumnLatitude',
                                 value: selected.value
                             });
@@ -81,10 +82,10 @@ class DotMapDetails extends Component {
                         name="dotColumnLongitude"
                         clearable={false}
                         value={data.dotColumnLongitude}
-                        options={fileInfo.columns}
+                        options={this.state.columns}
                         searchable={false}
                         onChange={(selected) => {
-                            this.props.onFieldChange({
+                            this.props.onChange({
                                 name: 'dotColumnLongitude',
                                 value: selected.value
                             });
