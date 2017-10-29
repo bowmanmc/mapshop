@@ -9,6 +9,7 @@ import ColorPicker from '../ColorPicker';
 import FilePicker from '../FilePicker';
 
 import ChoroplethMapDetails from './ChoroplethMapDetails';
+import DataFileUtils from './DataFileUtils';
 import DotMapDetails from './DotMapDetails';
 
 
@@ -30,8 +31,18 @@ class DataDetails extends Component {
     }
 
     onDataFileChange(evt) {
+        // update data.filepath
+        let changes = {};
+        changes[evt.name] = evt.value;
         // Update file dependent attrs (column indexes)
-        this.onFieldChange(evt);
+        DataFileUtils.getColumns(evt.value).then(columns => {
+            let latGuess = DataFileUtils.guessLatitudeColumn(columns);
+            changes['dotColumnLatitude'] = latGuess;
+            let lonGuess = DataFileUtils.guessLongitudeColumn(columns);
+            changes['dotColumnLongitude'] = lonGuess;
+            console.log('Changes: ' + JSON.stringify(changes));
+            this.props.dispatchEditData(changes);
+        });
     }
 
     onFieldChange(evt) {
