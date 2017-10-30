@@ -11,20 +11,19 @@ describe('SvgRenderer Performance Checks', () => {
     // Get all maps in the Data Index and render each one with some default styles
     // Make sure all maps render under our performance budget
     const maps = Object.keys(MapIndex);
-    let project = {
-        basemap: [{
-            fillColor: '#ffdd00',
-            stroke: null
-        }]
+    let basemap = {
+        fillColor: '#ffdd00',
+        stroke: null
     };
+
     // Test each map and fail if it doesn't meet our performance requirements
     maps.forEach(mapId => {
         it(`Render ${mapId} in under ${BUDGET}ms`, () => {
             const mapInfo = MapIndex[mapId];
             const mapData = DataLoader.loadMap(mapId);
-            project.basemap[0].mapId = mapId;
+            basemap.mapId = mapId;
             const start = moment();
-            SvgRenderer.render(project, [mapData]);
+            SvgRenderer.render(null, basemap, null, mapData);
             const end = moment();
             const dur = end.diff(start);
             expect(dur).toBeLessThan(BUDGET);
