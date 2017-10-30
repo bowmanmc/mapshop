@@ -1,18 +1,18 @@
 export default {
     basemap: {
-        mapId: 'usa-counties',
+        mapId: 'usa-oh',
         fillColor: '#b1e5d9',
         strokeColor: '#000000',
         strokeWidth: 1
     },
     data: {
-        //filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
-        filepath: null,
+        filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
+        //filepath: null,
         renderType: 'dot',
         dotRadius: 3,
         dotColor: '#4e5b66',
-        dotColumnLatitude: -1,
-        dotColumnLongitude: -1,
+        dotColumnLatitude: 0,
+        dotColumnLongitude: 1,
         choroplethNumClasses: 7,
         choroplethColorRamp: []
     },

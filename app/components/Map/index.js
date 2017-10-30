@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import DataLoader from '../../data/loader';
 import SvgRenderer from './SvgRenderer';
@@ -11,13 +12,13 @@ class MapEditorCanvas extends React.Component {
     }
 
     render() {
-        const layers = this.props.project.basemap;
-        const mapData = [];
-        layers.forEach(layer => {
-            mapData.push(DataLoader.loadMap(layer.mapId));
-        });
+        const basemap = this.props.basemap;
+        const data = this.props.data;
+        const project = this.props.project;
 
-        const svg = SvgRenderer.render(this.props.project, mapData);
+        const mapData = DataLoader.loadMap(basemap.mapId);
+
+        const svg = SvgRenderer.render(project, basemap, data, mapData);
 
         return (
             <div ref="MapEditorCanvas" className="MapEditorCanvas">
@@ -27,4 +28,8 @@ class MapEditorCanvas extends React.Component {
     }
 };
 
-export default MapEditorCanvas;
+const mapStateToProps = (state) => {
+    return state; // we need everything
+}
+
+export default connect(mapStateToProps, null)(MapEditorCanvas);
