@@ -4,7 +4,11 @@ import d3 from 'd3';
 import { geoCentroid, geoPath } from 'd3-geo';
 import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
 
+import fs from 'fs';
+
 import MapIndex from '../../data/maps';
+
+import DataLoader from './DataLoader';
 
 
 export default {
@@ -55,9 +59,34 @@ export default {
             </g>
         );
 
+        // read file
+        const points = DataLoader.load(
+            data.filepath,
+            data.dotColumnLatitude,
+            data.dotColumnLongitude);
+
+        let circles = [];
+        let i = 0;
+        points.forEach(point => {
+            let translate = `translate(${projection([point.lon, point.lat])})`;
+            circles.push(
+                <circle key={`row-${i}`}
+                    r={data.dotRadius}
+                    fill={data.dotColor}
+                    transform={translate} />
+            );
+            i++;
+        });
+        let datagroup = (
+            <g id='Data'>{ circles }</g>
+        );
+
         const viewBox = `0 0 ${width} ${height}`;
         return (
-            <svg viewBox={viewBox}>{basegroup}</svg>
+            <svg viewBox={viewBox}>
+                { basegroup }
+                { datagroup }
+            </svg>
         );
     }
 };

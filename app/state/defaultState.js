@@ -6,8 +6,8 @@ export default {
         strokeWidth: 1
     },
     data: {
-        filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
-        //filepath: null,
+        // filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
+        filepath: null,
         renderType: 'dot',
         dotRadius: 3,
         dotColor: '#4e5b66',
