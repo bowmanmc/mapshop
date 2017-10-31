@@ -20,7 +20,7 @@ class DotMapDetails extends Component {
         if (nextProps.data.filepath !== this.props.data.filepath) {
             let comp = this;
             DataFileUtils.getColumns(nextProps.data.filepath).then(cols => {
-                console.log(`Updating columns for ${nextProps.data.filepath} to ${JSON.stringify(cols)}`);
+                //console.log(`Updating columns for ${nextProps.data.filepath} to ${JSON.stringify(cols)}`);
                 comp.setState({columns: cols});
             });
         }
@@ -28,9 +28,12 @@ class DotMapDetails extends Component {
 
     render() {
         const data = this.props.data;
-        console.log('Rendering DotMapDetails with columns: ' + JSON.stringify(this.state.columns));
         return (
             <div className="DotMapDetails">
+                <div className="FormInput">
+                    <label>Constrain Dots to Map</label>
+                </div>
+
                 <div className="FormInput">
                     <label>Dot Radius</label>
                     <div className="FormInput__split-ctrl">

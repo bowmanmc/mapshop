@@ -40,7 +40,7 @@ class DataDetails extends Component {
             changes['dotColumnLatitude'] = latGuess;
             let lonGuess = DataFileUtils.guessLongitudeColumn(columns);
             changes['dotColumnLongitude'] = lonGuess;
-            console.log('Changes: ' + JSON.stringify(changes));
+            //console.log('Changes: ' + JSON.stringify(changes));
             this.props.dispatchEditData(changes);
         });
     }

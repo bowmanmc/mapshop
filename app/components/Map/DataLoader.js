@@ -8,16 +8,15 @@ export default {
         let result = [];
 
         // Make sure we can read from filepath
-        //if (!filepath || !fs.existsSync(filepath) || !fs.accessSync(filepath, fs.constants.R_OK)) {
         if (!filepath || !fs.existsSync(filepath) || fs.accessSync(filepath, fs.constants.R_OK)) {
-            console.log(`Can't read from ${filepath}`);
+            //console.log(`Can't read from ${filepath}`);
             return result;
         }
 
         // Make sure we have something reasonable for lat/lon columns
         if ((typeof latColumn === 'undefined') || latColumn < 0 ||
             (typeof lonColumn === 'undefined') || lonColumn < 0) {
-            console.log(`Invalid lat/lon columns ${latColumn}/${lonColumn}`);
+            //console.log(`Invalid lat/lon columns ${latColumn}/${lonColumn}`);
             return result;
         }
 
