@@ -37,7 +37,7 @@ class DotMapDetails extends Component {
                         <div className="FormInput__split-ctrl-picker">
                             <Slider
                                 min={ 0 }
-                                max={ 10 }
+                                max={ 20 }
                                 defaultValue={ data.dotRadius }
                                 onChange={(newVal) => {
                                     this.props.onChange({
