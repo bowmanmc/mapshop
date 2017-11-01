@@ -9,6 +9,7 @@ export default {
         // filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
         filepath: null,
         renderType: 'dot',
+        dotConstrainToMap: false,
         dotRadius: 3,
         dotColor: '#4e5b66',
         dotColumnLatitude: 0,

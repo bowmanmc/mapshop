@@ -11,6 +11,44 @@ import MapIndex from '../../data/maps';
 import DataLoader from './DataLoader';
 
 
+const renderData = (basemap, data, projection) => {
+    // read file
+    const points = DataLoader.load(
+        data.filepath,
+        data.dotColumnLatitude,
+        data.dotColumnLongitude);
+
+    let circles = [];
+    let i = 0;
+    points.forEach(point => {
+        let translate = `translate(${projection([point.lon, point.lat])})`;
+        circles.push(
+            <circle key={`row-${i}`}
+                r={data.dotRadius}
+                fill={data.dotColor}
+                transform={translate} />
+        );
+        i++;
+    });
+
+    let g = (
+        <g id='Data'>
+            { circles }
+        </g>
+    );
+    if (data.dotConstrainToMap) {
+        g = (
+            <g id='Data' clipPath={`url(#clippath-${basemap.mapId})`}>
+                { circles }
+            </g>
+        );
+    }
+
+    return g;
+}
+
+
+
 export default {
 
     render: function(project, basemap, data, mapData) {
@@ -53,37 +91,28 @@ export default {
             styles.stroke = basemap.strokeColor;
         }
 
+        const dPath = path(mapData);
+        let clipPath = null;
+        if (data.dotConstrainToMap) {
+            clipPath = (
+                <clipPath id={`clippath-${basemap.mapId}`}>
+                    <path d={dPath} />
+                </clipPath>
+            );
+        }
+
         const basegroup = (
             <g id={basemap.mapId}>
-                <path {...styles} d={path(mapData)} />
+                <path {...styles} d={dPath} />
             </g>
         );
 
-        // read file
-        const points = DataLoader.load(
-            data.filepath,
-            data.dotColumnLatitude,
-            data.dotColumnLongitude);
-
-        let circles = [];
-        let i = 0;
-        points.forEach(point => {
-            let translate = `translate(${projection([point.lon, point.lat])})`;
-            circles.push(
-                <circle key={`row-${i}`}
-                    r={data.dotRadius}
-                    fill={data.dotColor}
-                    transform={translate} />
-            );
-            i++;
-        });
-        let datagroup = (
-            <g id='Data'>{ circles }</g>
-        );
+        const datagroup = renderData(basemap, data, projection);
 
         const viewBox = `0 0 ${width} ${height}`;
         return (
             <svg viewBox={viewBox}>
+                { clipPath }
                 { basegroup }
                 { datagroup }
             </svg>
