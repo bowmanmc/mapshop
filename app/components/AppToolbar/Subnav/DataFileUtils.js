@@ -6,12 +6,11 @@ let guessFunction = function(columns, guesses, defaultGuess) {
     if (!columns || !columns.length || columns.length < 1) {
         return defaultGuess;
     }
-
     for (let i = 0; i < columns.length; i++) {
         let col = columns[i];
         for (let j = 0; j < guesses.length; j++) {
             let guess = guesses[j];
-            if (col.label.toUpperCase() === guess) {
+            if (col.label.toUpperCase().includes(guess)) {
                 return col.value;
             }
         };
@@ -37,7 +36,7 @@ export default {
                 let parts = line.split(',');
                 for (let i = 0; i < parts.length; i++) {
                     columns.push({
-                        label: parts[i].trim(),
+                        label: `Column #${i + 1} (${parts[i].trim()})`,
                         value: i
                     });
                 }
@@ -47,12 +46,14 @@ export default {
     },
 
     guessLatitudeColumn(columns) {
-        const guesses = ['LATITUDE', 'LATITUDES', 'LAT', 'LATS', 'LT', 'LTS'];
+        // We wrap the first line with parens
+        const guesses = ['(LATITUDE', '(LAT', '(LT'];
         return guessFunction(columns, guesses, -1);
     },
 
     guessLongitudeColumn(columns) {
-        const guesses = ['LONGITUDE', 'LONGITUDES', 'LON', 'LONS', 'LONG', 'LONGS', 'LNG', 'LNGS'];
+        // We wrap the first line with parens
+        const guesses = ['(LONGITUDE', '(LON', '(LONG', '(LNG'];
         return guessFunction(columns, guesses, -1);
     }
 }
