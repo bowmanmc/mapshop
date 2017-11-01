@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import Slider from 'rc-slider';
+import Toggle from 'react-toggle';
 
 import ColorPicker from '../ColorPicker';
 import DataFileUtils from './DataFileUtils';
@@ -31,7 +32,16 @@ class DotMapDetails extends Component {
         return (
             <div className="DotMapDetails">
                 <div className="FormInput">
-                    <label>Constrain Dots to Map</label>
+                    <label htmlFor='dotConstrainToMap'>Constrain Data to Map</label>
+                    <Toggle
+                        id='dotConstrainToMap'
+                        defaultChecked={ data.dotConstrainToMap }
+                        onChange={(evt) => {
+                            this.props.onChange({
+                                name: 'dotConstrainToMap',
+                                value: evt.target.checked
+                            });
+                        }} />
                 </div>
 
                 <div className="FormInput">

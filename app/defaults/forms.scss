@@ -110,6 +110,51 @@ $font-size: 14px;
     }
 }
 
+// React Toggle Overrides
+.react-toggle-track {
+    background-color: $clr-gray-20;
+    box-shadow: inset 0 1px 2px transparentize($clr-black, 0.4), 0 -1px 1px $clr-gray-30, 0 1px 0 $clr-gray-30;
+}
+
+.react-toggle:hover:not(.react-toggle--checked) .react-toggle-track {
+    background: $clr-gray-25;
+}
+
+.react-toggle--checked .react-toggle-track {
+    background-color: $clr-gray-50;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: $clr-gray-50;
+}
+
+.react-toggle-thumb {
+    background-color: $clr-gray-60;
+    border-color: $clr-gray-40;
+    box-shadow: 0 0 3px transparentize($clr-black, 0.25);
+
+    &:hover {
+        background-color: $clr-gray-70;
+    }
+}
+
+.react-toggle--checked .react-toggle-thumb {
+    border-color: $clr-gray-50;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+    box-shadow: 0 0 3px transparentize($clr-black, 0.25);
+}
+
+.react-toggle-track-x,
+.react-toggle-track-check {
+    svg {
+        path {
+            fill: $clr-gray-85;
+        }
+    }
+}
+
 // RC Slider Overrides
 .rc-slider-handle {
     background-color: $clr-gray-60;

@@ -48,7 +48,6 @@ const renderData = (basemap, data, projection) => {
 }
 
 
-
 export default {
 
     render: function(project, basemap, data, mapData) {
