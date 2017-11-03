@@ -90,20 +90,37 @@ export default {
             styles.stroke = basemap.strokeColor;
         }
 
-        const dPath = path(mapData);
+        let features = [];
+        if (mapData.features) {
+            features = mapData.features;
+        }
+        else {
+            features.push(mapData);
+        }
+
+        let paths = [];
+        let clips = [];
+        features.forEach(feature => {
+            let d = path(feature);
+            paths.push(
+                <path {...styles} d={d} />
+            );
+            clips.push(
+                <path d={d} />
+            );
+        });
+
         let clipPath = null;
-        if (data.dotConstrainToMap) {
+        if (data.renderType === 'dot' && data.dotConstrainToMap) {
             clipPath = (
                 <clipPath id={`clippath-${basemap.mapId}`}>
-                    <path d={dPath} />
+                    { clips }
                 </clipPath>
             );
         }
 
         const basegroup = (
-            <g id={basemap.mapId}>
-                <path {...styles} d={dPath} />
-            </g>
+            <g id={basemap.mapId}>{ paths }</g>
         );
 
         const datagroup = renderData(basemap, data, projection);

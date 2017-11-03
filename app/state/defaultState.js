@@ -1,6 +1,6 @@
 export default {
     basemap: {
-        mapId: 'usa-oh',
+        mapId: 'usa-counties',
         fillColor: '#b1e5d9',
         strokeColor: '#000000',
         strokeWidth: 1

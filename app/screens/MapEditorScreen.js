@@ -6,8 +6,7 @@ import StateOverlay from '../components/StateOverlay';
 
 
 const MapEditorScreen = () => {
-    //console.log('Rendering: ' + JSON.stringify(this.props.project));
-    //<Map project={ this.props.project } />
+    //<StateOverlay />
     return (
         <div className="MapEditorScreen">
             <div className="MapEditorScreen__apptoolbar">
