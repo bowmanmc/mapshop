@@ -90,6 +90,10 @@ export default {
             styles.stroke = basemap.strokeColor;
         }
 
+        if (basemap.strokeWidth) {
+            styles.strokeWidth = basemap.strokeWidth;
+        }
+
         let features = [];
         if (mapData.features) {
             features = mapData.features;
