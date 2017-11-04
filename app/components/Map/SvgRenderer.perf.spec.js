@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 import MapIndex from '../../data/maps';
-import DataLoader from '../../data/loader';
+import MapLoader from '../../data/loader';
 import SvgRenderer from './SvgRenderer';
 
 const BUDGET = 5 * 1000; // in ms
@@ -20,10 +20,10 @@ describe('SvgRenderer Performance Checks', () => {
     maps.forEach(mapId => {
         it(`Render ${mapId} in under ${BUDGET}ms`, () => {
             const mapInfo = MapIndex[mapId];
-            const mapData = DataLoader.loadMap(mapId);
+            const mapData = MapLoader.loadMap(mapId);
             basemap.mapId = mapId;
             const start = moment();
-            SvgRenderer.render(null, basemap, {}, mapData);
+            SvgRenderer.render(null, basemap, {}, mapData, mapInfo);
             const end = moment();
             const dur = end.diff(start);
             expect(dur).toBeLessThan(BUDGET);

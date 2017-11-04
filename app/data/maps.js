@@ -5,6 +5,7 @@ const USA = {
     'usa-counties': {
         name: 'USA - Counties',
         projection: 'albers',
+        idcol: 'GEOID',
         files: {
             high: 'countries/usa/cb_2016_us_county_500k.json',
             medium: 'countries/usa/cb_2016_us_county_5m.json',
@@ -14,6 +15,7 @@ const USA = {
     'usa-states': {
         name: 'USA - States',
         projection: 'albers',
+        idcol: 'GEOID',
         files: {
             high: 'countries/usa/cb_2015_us_state_500k.json',
             medium: 'countries/usa/cb_2015_us_state_5m.json',

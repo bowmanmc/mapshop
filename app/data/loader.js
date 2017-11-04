@@ -11,6 +11,9 @@ export default {
         //console.log(`Loading ${filepath}`);
         const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));
         return data;
-    }
+    },
 
+    getInfo(mapId) {
+        return mapIndex[mapId];
+    }
 }

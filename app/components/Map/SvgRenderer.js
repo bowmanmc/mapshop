@@ -50,7 +50,7 @@ const renderData = (basemap, data, projection) => {
 
 export default {
 
-    render: function(project, basemap, data, mapData) {
+    render: function(project, basemap, data, mapData, mapInfo) {
 
         let projection = geoConicConformal(); // default projection
         const projectionId = MapIndex[basemap.mapId].projection;
@@ -101,12 +101,13 @@ export default {
         let paths = [];
         let clips = [];
         features.forEach(feature => {
+            const featureId = feature.properties[mapInfo.idcol] || basemap.mapId;
             let d = path(feature);
             paths.push(
-                <path {...styles} d={d} />
+                <path key={featureId} id={featureId} {...styles} d={d} />
             );
             clips.push(
-                <path d={d} />
+                <path key={featureId} id={featureId} d={d} />
             );
         });
 
