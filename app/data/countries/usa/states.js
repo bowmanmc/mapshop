@@ -7,9 +7,9 @@ export default {
         "geoid": "02",
         "postal": "AK",
         "files": {
-            "high": "countries/usa/ak/ak-high.json",
-            "medium": "countries/usa/ak/ak-medium.json",
-            "low": "countries/usa/ak/ak-low.json"
+            //"high": "countries/usa/ak/ak-high.json",
+            "high": "countries/usa/ak/ak-medium.json",
+            "medium": "countries/usa/ak/ak-low.json"
         }
     },
     "usa-al": {
@@ -150,9 +150,11 @@ export default {
         "geoid": "15",
         "postal": "HI",
         "files": {
-            "high": "countries/usa/hi/hi-high.json",
-            "medium": "countries/usa/hi/hi-medium.json",
-            "low": "countries/usa/hi/hi-low.json"
+            //"high": "countries/usa/hi/hi-high.json",
+            "high": "countries/usa/hi/hi-medium.json",
+            //"medium": "countries/usa/hi/hi-medium.json",
+            "medium": "countries/usa/hi/hi-low.json"
+            //"low": "countries/usa/hi/hi-low.json"
         }
     },
     "usa-ia": {

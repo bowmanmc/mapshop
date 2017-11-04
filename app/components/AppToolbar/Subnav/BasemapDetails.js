@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Select from 'react-select';
 import Slider from 'rc-slider';
 
 import * as actions from '../../../state/basemap/actions';
+import MapLoader from '../../../data/loader';
 
 import ColorPicker from '../ColorPicker';
 import MapSelector from '../MapSelector';
@@ -25,6 +27,24 @@ class BasemapDetails extends Component {
     render() {
         const basemap = this.props.basemap;
 
+        const mapInfo = MapLoader.getInfo(basemap.mapId);
+        let resolutions = [];
+        if (mapInfo && mapInfo.files) {
+            if (mapInfo.files.high) {
+                resolutions.push({label: 'High', value: 'high'});
+            }
+            if (mapInfo.files.medium) {
+                resolutions.push({label: 'Medium', value: 'medium'});
+            }
+            if (mapInfo.files.low) {
+                resolutions.push({label: 'Low', value: 'low'});
+            }
+        }
+        let resolution = basemap.resolution;
+        if (Object.keys(mapInfo.files).indexOf(basemap.resolution) < 0) {
+            resolution = 'medium';
+        }
+
         return (
             <div className="BasemapDetails">
 
@@ -36,6 +56,21 @@ class BasemapDetails extends Component {
                             value: selected.value
                         });
                     }} />
+                </div>
+
+                <div className="FormInput">
+                    <label>Map Resolution</label>
+                    <Select name="resolution"
+                        clearable={false}
+                        value={resolution}
+                        options={resolutions}
+                        searchable={false}
+                        onChange={(selected) => {
+                            this.onFieldChange({
+                                name: 'resolution',
+                                value: selected.value
+                            });
+                        }} />
                 </div>
 
                 <div className="FormInput">

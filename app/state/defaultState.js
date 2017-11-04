@@ -1,6 +1,7 @@
 export default {
     basemap: {
         mapId: 'usa-states',
+        resolution: 'medium',
         fillColor: '#b1e5d9',
         strokeColor: '#000000',
         strokeWidth: 1

@@ -7,9 +7,9 @@ const USA = {
         projection: 'albers',
         idcol: 'GEOID',
         files: {
-            high: 'countries/usa/cb_2016_us_county_500k.json',
-            medium: 'countries/usa/cb_2016_us_county_5m.json',
-            low: 'countries/usa/cb_2016_us_county_20m.json'
+            //high: 'countries/usa/cb_2016_us_county_500k.json',
+            high: 'countries/usa/cb_2016_us_county_5m.json',
+            medium: 'countries/usa/cb_2016_us_county_20m.json'
         }
     },
     'usa-states': {
@@ -17,9 +17,9 @@ const USA = {
         projection: 'albers',
         idcol: 'GEOID',
         files: {
-            high: 'countries/usa/cb_2015_us_state_500k.json',
-            medium: 'countries/usa/cb_2015_us_state_5m.json',
-            low: 'countries/usa/cb_2015_us_state_20m.json'
+            //high: 'countries/usa/cb_2015_us_state_500k.json',
+            high: 'countries/usa/cb_2015_us_state_5m.json',
+            medium: 'countries/usa/cb_2015_us_state_20m.json'
         }
     }
 }

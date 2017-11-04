@@ -18,7 +18,7 @@ class MapEditorCanvas extends React.Component {
         const project = this.props.project;
 
         const startTime = moment();
-        const mapData = MapLoader.loadMap(basemap.mapId);
+        const mapData = MapLoader.loadMap(basemap.mapId, basemap.resolution);
         const dataTime = moment();
         console.log(`Loaded data for ${basemap.mapId} in ${dataTime.diff(startTime)}ms`);
 
