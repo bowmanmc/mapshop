@@ -23,7 +23,7 @@ describe('SvgRenderer Performance Checks', () => {
             const mapData = MapLoader.loadMap(mapId);
             basemap.mapId = mapId;
             const start = moment();
-            SvgRenderer.render(null, basemap, {}, mapData, mapInfo);
+            SvgRenderer.render({}, basemap, {}, mapData, mapInfo);
             const end = moment();
             const dur = end.diff(start);
             expect(dur).toBeLessThan(BUDGET);
