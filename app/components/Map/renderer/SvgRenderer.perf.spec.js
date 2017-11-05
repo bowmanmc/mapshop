@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-import MapIndex from '../../data/maps';
-import MapLoader from '../../data/loader';
-import SvgRenderer from './SvgRenderer';
+import MapIndex from '../../../data/maps';
+import MapLoader from '../../../data/loader';
+import SvgRenderer from './index';
 
 const BUDGET = 5 * 1000; // in ms
 

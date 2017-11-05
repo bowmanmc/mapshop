@@ -6,12 +6,12 @@ import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
 
 import fs from 'fs';
 
-import MapIndex from '../../data/maps';
+import MapIndex from '../../../data/maps';
 
 import DataLoader from './DataLoader';
 
 
-const renderData = (basemap, data, projection) => {
+const renderDots = (basemap, data, projection) => {
     // read file
     const points = DataLoader.load(
         data.filepath,
@@ -116,7 +116,7 @@ export default {
         });
 
         let clipPath = null;
-        if (data.renderType === 'dot' && data.dotConstrainToMap) {
+        if (data.dotConstrainToMap) {
             clipPath = (
                 <clipPath id={`clippath-${basemap.mapId}`}>
                     { clips }
@@ -128,7 +128,7 @@ export default {
             <g id={basemap.mapId}>{ paths }</g>
         );
 
-        const datagroup = renderData(basemap, data, projection);
+        const datagroup = renderDots(basemap, data, projection);
 
         const viewBox = `0 0 ${width} ${height}`;
         return (

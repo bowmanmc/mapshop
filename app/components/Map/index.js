@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import MapLoader from '../../data/loader';
-import SvgRenderer from './SvgRenderer';
+import SvgRenderer from './renderer';
 
 
 class MapEditorCanvas extends React.Component {
