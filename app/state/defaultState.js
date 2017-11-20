@@ -9,14 +9,14 @@ export default {
     data: {
         // filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
         filepath: null,
-        renderType: 'dot',
+        renderType: 'choropleth',
         dotConstrainToMap: true,
         dotRadius: 3,
         dotColor: '#4e5b66',
         dotColumnLatitude: 0,
         dotColumnLongitude: 1,
-        choroplethNumClasses: 7,
-        choroplethColorRamp: []
+        choroplethNumClasses: 5,
+        choroplethColorRamp: 'Blues'
     },
     project: {
         title: '2016 Unemployment by County',
