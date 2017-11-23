@@ -1,52 +1,52 @@
-State Name,State Abbr.,Uninsured 2010,Uninsured 2015,,,
-Alaska,AK,19.9,14.9,,,
-Alabama,AL,14.6,10.1,,,
-Arkansas,AR,17.5,9.5,,,
-Arizona,AZ,16.9,10.8,,,
-California,CA,18.5,8.6,,,
-Colorado,CO,15.9,8.1,,,
-ConnecticutÊ,CT,9.1,6.0,,,
-District Of Columbia ,DC,7.6,3.8,,,
-Delaware,DE,9.7,5.9,,,
-Florida,FL,21.3,13.3,,,
-Georgia,GA,19.7,13.9,,,
-Hawaii,HI,7.9,4.0,,,
-Iowa,IA,9.3,5.0,,,
-Idaho,ID,17.7,11.0,,,
-Illinois,IL,13.8,7.1,,,
-Indiana,IN,14.8,9.6,,,
-Kansas,KS,13.9,9.1,,,
-Kentucky,KY,15.3,6.0,,,
-Louisiana,LA,17.8,11.9,,,
-Massachusetts,MA,4.4,2.8,,,
-Maryland ,MD,11.3,6.6,,,
-Maine,ME,10.1,8.4,,,
-Michigan,MI,12.4,6.1,,,
-Minnesota ,MN,9.1,4.5,,,
-Missouri,MO,13.2,9.8,,,
-Mississippi,MS,18.2,12.7,,,
-Montana,MT,17.3,11.6,,,
-North Carolina,NC,16.8,11.2,,,
-North Dakota,ND,9.8,7.8,,,
-Nebraska,NE,11.5,8.2,,,
-New Hampshire,NH,11.1,6.3,,,
-New Jersey,NJ,13.2,8.7,,,
-New Mexico,NM,19.6,10.9,,,
-Nevada,NV,22.6,12.3,,,
-New York,NY,11.9,7.1,,,
-Ohio,OH,12.3,6.5,,,
-Oklahoma,OK,18.9,13.9,,,
-Oregon*,OR,17.1,7.0,,,
-Pennsylvania,PA,10.2,6.4,,,
-Rhode Island ,RI,12.2,5.7,,,
-South Carolina,SC,17.5,10.9,,,
-South Dakota,SD,12.4,10.2,,,
-Tennessee,TN,14.4,10.3,,,
-Texas,TX,23.7,17.1,,,
-Utah,UT,15.3,10.5,,,
-Virginia,VA,13.1,9.1,,,
-Vermont ,VT,8.0,3.8,,,
-Washington ,WA,14.2,6.6,,,
-Wisconsin,WI,9.4,5.7,,,
-West Virginia,WV,14.6,6.0,,,
-Wyoming,WY,14.9,11.5,,,
+State Name,State Abbr.,Uninsured 2010,Uninsured 2015
+Alaska,AK,19.9,14.9
+Alabama,AL,14.6,10.1
+Arkansas,AR,17.5,9.5
+Arizona,AZ,16.9,10.8
+California,CA,18.5,8.6
+Colorado,CO,15.9,8.1
+ConnecticutÊ,CT,9.1,6.0
+District Of Columbia ,DC,7.6,3.8
+Delaware,DE,9.7,5.9
+Florida,FL,21.3,13.3
+Georgia,GA,19.7,13.9
+Hawaii,HI,7.9,4.0
+Iowa,IA,9.3,5.0
+Idaho,ID,17.7,11.0
+Illinois,IL,13.8,7.1
+Indiana,IN,14.8,9.6
+Kansas,KS,13.9,9.1
+Kentucky,KY,15.3,6.0
+Louisiana,LA,17.8,11.9
+Massachusetts,MA,4.4,2.8
+Maryland ,MD,11.3,6.6
+Maine,ME,10.1,8.4
+Michigan,MI,12.4,6.1
+Minnesota ,MN,9.1,4.5
+Missouri,MO,13.2,9.8
+Mississippi,MS,18.2,12.7
+Montana,MT,17.3,11.6
+North Carolina,NC,16.8,11.2
+North Dakota,ND,9.8,7.8
+Nebraska,NE,11.5,8.2
+New Hampshire,NH,11.1,6.3
+New Jersey,NJ,13.2,8.7
+New Mexico,NM,19.6,10.9
+Nevada,NV,22.6,12.3
+New York,NY,11.9,7.1
+Ohio,OH,12.3,6.5
+Oklahoma,OK,18.9,13.9
+Oregon*,OR,17.1,7.0
+Pennsylvania,PA,10.2,6.4
+Rhode Island ,RI,12.2,5.7
+South Carolina,SC,17.5,10.9
+South Dakota,SD,12.4,10.2
+Tennessee,TN,14.4,10.3
+Texas,TX,23.7,17.1
+Utah,UT,15.3,10.5
+Virginia,VA,13.1,9.1
+Vermont ,VT,8.0,3.8
+Washington ,WA,14.2,6.6
+Wisconsin,WI,9.4,5.7
+West Virginia,WV,14.6,6.0
+Wyoming,WY,14.9,11.5
