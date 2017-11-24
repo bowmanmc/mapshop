@@ -52,6 +52,7 @@ class DataDetails extends Component {
     }
 
     render() {
+        const basemap = this.props.basemap;
         const data = this.props.data;
 
         let attrs = null;
@@ -59,7 +60,7 @@ class DataDetails extends Component {
             attrs = <DotMapDetails data={ data } onChange={ this.onFieldChange } />
         }
         else {
-            attrs = <ChoroplethMapDetails data={ data } onChange={ this.onFieldChange } />
+            attrs = <ChoroplethMapDetails data={ data } basemap={ basemap } onChange={ this.onFieldChange } />
         }
 
         return (
@@ -98,6 +99,7 @@ class DataDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        basemap: state.basemap,
         data: state.data
     };
 };

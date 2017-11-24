@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import Slider from 'rc-slider';
 
+import MapLoader from '../../../data/loader';
+
 import ColorPicker from '../ColorPicker';
 import DataFileUtils from './DataFileUtils';
 
@@ -41,7 +43,19 @@ class ChoroplethMapDetails extends Component {
     }
 
     render() {
+        const basemap = this.props.basemap;
         const data = this.props.data;
+
+        const mapData = MapLoader.loadMap(basemap.mapId, basemap.resolution);
+
+        let cols = Object.keys(mapData.features[0].properties).sort();
+        let matchColumns = [];
+        cols.forEach(col => {
+            matchColumns.push({
+                value: col,
+                label: `${col} (${mapData.features[0].properties[col]})`
+            });
+        });
 
         return (
             <div className="ChoroplethMapDetails">
@@ -83,7 +97,23 @@ class ChoroplethMapDetails extends Component {
                 </div>
 
                 <div className="FormInput">
-                    <label>Geo Column</label>
+                    <label>Geo Column Type</label>
+                    <Select
+                        name="choroplethMatchColumn"
+                        clearable={false}
+                        value={data.choroplethMatchColumn}
+                        options={matchColumns}
+                        searchable={false}
+                        onChange={(selected) => {
+                            this.props.onChange({
+                                name: 'choroplethMatchColumn',
+                                value: selected.value
+                            });
+                        }} />
+                </div>
+
+                <div className="FormInput">
+                    <label>Geo Data Column</label>
                     <Select
                         name="choroplethColumnGeo"
                         clearable={false}
@@ -99,11 +129,7 @@ class ChoroplethMapDetails extends Component {
                 </div>
 
                 <div className="FormInput">
-                    <label>Geo Column Type</label>
-                </div>
-
-                <div className="FormInput">
-                    <label>Value Column</label>
+                    <label>Value Data Column</label>
                     <Select
                         name="choroplethColumnValue"
                         clearable={false}
