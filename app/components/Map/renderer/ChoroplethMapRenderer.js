@@ -1,8 +1,9 @@
 import React from 'react';
 
-import d3 from 'd3';
+import * as d3 from 'd3';
 import { geoCentroid, geoPath } from 'd3-geo';
 import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
+import { schemeBlues } from 'd3-scale-chromatic';
 
 import fs from 'fs';
 
@@ -17,6 +18,10 @@ export default {
     render: function(project, basemap, data, mapData, mapInfo) {
 
         const mapSetup = MapUtils.setupMap(basemap, mapData);
+
+        const color = d3.scaleThreshold()
+            .domain(d3.range(2, 10))
+            .range(schemeBlues[9]);
 
         let features = [];
         if (mapData.features) {
