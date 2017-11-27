@@ -17,7 +17,7 @@ export default {
         dotColumnLatitude: 0,
         dotColumnLongitude: 1,
         choroplethColorRamp: 'Blues',
-        choroplethMatchColumn: 'GEOID',
+        choroplethGeoType: 'STUSPS',
         choroplethNumClasses: 5,
         choroplethColumnGeo: 1,
         choroplethColumnValue: 3

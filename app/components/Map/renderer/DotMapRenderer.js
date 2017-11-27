@@ -9,7 +9,7 @@ import MapUtils from './MapUtils';
 
 const renderDots = (basemap, data, projection) => {
     // read file
-    const points = DataLoader.load(
+    const points = DataLoader.loadDotData(
         data.filepath,
         data.dotColumnLatitude,
         data.dotColumnLongitude);

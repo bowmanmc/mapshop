@@ -17,11 +17,13 @@ export default {
 
     render: function(project, basemap, data, mapData, mapInfo) {
 
-        const mapSetup = MapUtils.setupMap(basemap, mapData);
+        let mapSetup = MapUtils.setupMap(basemap, mapData);
+
+        const choroplethData = DataLoader.loadChoroplethData(data.filepath, data.choroplethColumnGeo, data.choroplethColumnValue);
 
         const color = d3.scaleThreshold()
-            .domain(d3.range(2, 10))
-            .range(schemeBlues[9]);
+            .domain(d3.range(choroplethData.MT_MIN, choroplethData.MT_MAX))
+            .range(schemeBlues[data.choroplethNumClasses]);
 
         let features = [];
         if (mapData.features) {
@@ -34,6 +36,14 @@ export default {
         let paths = [];
         features.forEach(feature => {
             const featureId = feature.properties[mapInfo.idcol] || basemap.mapId;
+            const geoType = feature.properties[data.choroplethGeoType];
+            //console.log(`${geoType}: ${choroplethData[geoType]}`);
+            const val = choroplethData[geoType];
+            const c = color(val);
+            if (c) {
+                mapSetup.styles.fill = c ;
+            }
+
             paths.push(
                 <path key={featureId}
                     id={featureId}

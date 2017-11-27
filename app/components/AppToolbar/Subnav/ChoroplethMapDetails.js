@@ -65,7 +65,7 @@ class ChoroplethMapDetails extends Component {
                         <div className="FormInput__split-ctrl-picker">
                             <Slider
                                 min={ 3 }
-                                max={ 7 }
+                                max={ 9 }
                                 defaultValue={ data.choroplethNumClasses }
                                 onChange={(newVal) => {
                                     this.props.onChange({
@@ -99,14 +99,14 @@ class ChoroplethMapDetails extends Component {
                 <div className="FormInput">
                     <label>Geo Column Type</label>
                     <Select
-                        name="choroplethMatchColumn"
+                        name="choroplethGeoType"
                         clearable={false}
-                        value={data.choroplethMatchColumn}
+                        value={data.choroplethGeoType}
                         options={matchColumns}
                         searchable={false}
                         onChange={(selected) => {
                             this.props.onChange({
-                                name: 'choroplethMatchColumn',
+                                name: 'choroplethGeoType',
                                 value: selected.value
                             });
                         }} />

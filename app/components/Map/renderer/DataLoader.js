@@ -4,7 +4,51 @@ import moment from 'moment';
 
 export default {
 
-    load(filepath, latColumn, lonColumn) {
+    loadChoroplethData(filepath, geoColumn, valueColumn) {
+        let results = {};
+
+        if (!filepath || !fs.existsSync(filepath) || fs.accessSync(filepath, fs.constants.R_OK)) {
+            return results;
+        }
+
+        if ((typeof valueColumn === 'undefined') || valueColumn < 0) {
+            return results;
+        }
+
+        const startTime = moment();
+
+        let min = 0;
+        let max = 0;
+        const lines = fs.readFileSync(filepath).toString().split('\n');
+        lines.forEach(line => {
+            try {
+                const cols = line.split(',');
+                const geo = cols[geoColumn].trim();
+                const val = Number(cols[valueColumn]);
+
+                if (!isNaN(val)) {
+                    if (val < min) {
+                        min = val;
+                    }
+                    if (val > max) {
+                        max = val;
+                    }
+                    results[geo] = val;
+                }
+            }
+            catch (err) {}
+        });
+        results.MT_MIN = min;
+        results.MT_MAX = max;
+
+        const endTime = moment();
+        const duration = endTime.diff(startTime);
+        console.log(`Read ${Object.keys(results).length} values from ${filepath} in ${duration}ms.`);
+
+        return results;
+    },
+
+    loadDotData(filepath, latColumn, lonColumn) {
         let result = [];
 
         // Make sure we can read from filepath
