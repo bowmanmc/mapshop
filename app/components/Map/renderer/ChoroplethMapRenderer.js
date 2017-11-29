@@ -19,11 +19,17 @@ export default {
 
         let mapSetup = MapUtils.setupMap(basemap, mapData);
 
-        const choroplethData = DataLoader.loadChoroplethData(data.filepath, data.choroplethColumnGeo, data.choroplethColumnValue);
+        let choroplethData = null;
+        if (data.filepath) {
+            choroplethData = DataLoader.loadChoroplethData(data.filepath, data.choroplethColumnGeo, data.choroplethColumnValue);
+        }
 
-        const color = d3.scaleThreshold()
-            .domain(d3.range(choroplethData.MT_MIN, choroplethData.MT_MAX))
-            .range(schemeBlues[data.choroplethNumClasses]);
+        let color = null;
+        if (choroplethData && typeof(choroplethData.MT_MIN) !== 'undefined') {
+            color = d3.scaleThreshold()
+                .domain(d3.range(choroplethData.MT_MIN, choroplethData.MT_MAX))
+                .range(schemeBlues[data.choroplethNumClasses]);
+        }
 
         let features = [];
         if (mapData.features) {
@@ -38,10 +44,13 @@ export default {
             const featureId = feature.properties[mapInfo.idcol] || basemap.mapId;
             const geoType = feature.properties[data.choroplethGeoType];
             //console.log(`${geoType}: ${choroplethData[geoType]}`);
-            const val = choroplethData[geoType];
-            const c = color(val);
-            if (c) {
-                mapSetup.styles.fill = c ;
+
+            if (color) {
+                const val = choroplethData[geoType];
+                const c = color(val);
+                if (c) {
+                    mapSetup.styles.fill = c ;
+                }
             }
 
             paths.push(
