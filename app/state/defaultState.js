@@ -16,7 +16,7 @@ export default {
         dotColor: '#4e5b66',
         dotColumnLatitude: 0,
         dotColumnLongitude: 1,
-        choroplethColorRamp: 'Blues',
+        choroplethColorRamp: 'schemeGreys',
         choroplethGeoType: 'STUSPS',
         choroplethNumClasses: 5,
         choroplethColumnGeo: 1,

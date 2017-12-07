@@ -9,17 +9,17 @@ import DataFileUtils from './DataFileUtils';
 
 
 const COLOR_RAMPS = [
-    {value: 'GnBu', label: 'GnBu'},
-    {value: 'PuBu', label: 'PuBu'},
-    {value: 'YlGn', label: 'YlGn'},
-    {value: 'YlGnBu', label: 'YlGnBu'},
-    {value: 'YlOrRd', label: 'YlOrRd'},
-    {value: 'Blues', label: 'Blues'},
-    {value: 'Greens', label: 'Greens'},
-    {value: 'Greys', label: 'Greys'},
-    {value: 'Oranges', label: 'Oranges'},
-    {value: 'Purples', label: 'Purples'},
-    {value: 'Reds', label: 'Reds'}
+    {value: 'schemeGnBu', label: 'GnBu'},
+    {value: 'schemePuBu', label: 'PuBu'},
+    {value: 'schemeYlGn', label: 'YlGn'},
+    {value: 'schemeYlGnBu', label: 'YlGnBu'},
+    {value: 'schemeYlOrRd', label: 'YlOrRd'},
+    {value: 'schemeBlues', label: 'Blues'},
+    {value: 'schemeGreens', label: 'Greens'},
+    {value: 'schemeGreys', label: 'Greys'},
+    {value: 'schemeOranges', label: 'Oranges'},
+    {value: 'schemePurples', label: 'Purples'},
+    {value: 'schemeReds', label: 'Reds'}
 ];
 
 class ChoroplethMapDetails extends Component {

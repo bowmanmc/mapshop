@@ -3,7 +3,7 @@ import React from 'react';
 import * as d3 from 'd3';
 import { geoCentroid, geoPath } from 'd3-geo';
 import { geoAlbersUsa, geoConicConformal } from 'd3-geo';
-import { schemeBlues } from 'd3-scale-chromatic';
+import * as colorSchemes from 'd3-scale-chromatic';
 
 import fs from 'fs';
 
@@ -26,9 +26,11 @@ export default {
 
         let color = null;
         if (choroplethData && typeof(choroplethData.MT_MIN) !== 'undefined') {
+            let colorSchemeKey = data.choroplethColorRamp || 'schemeGreys';
+            let colorScheme = colorSchemes[colorSchemeKey];
             color = d3.scaleThreshold()
                 .domain(d3.range(choroplethData.MT_MIN, choroplethData.MT_MAX))
-                .range(schemeBlues[data.choroplethNumClasses]);
+                .range(colorScheme[data.choroplethNumClasses]);
         }
 
         let features = [];

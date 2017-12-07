@@ -13,7 +13,6 @@ const MapEditorScreen = () => {
                 <AppToolbar />
             </div>
             <div className="MapEditorScreen__workarea">
-                <StateOverlay />
                 <Map />
             </div>
         </div>
