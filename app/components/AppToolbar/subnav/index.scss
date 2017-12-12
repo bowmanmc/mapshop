@@ -8,9 +8,60 @@
 }
 
 .Subnav__item {
+    height: 100%;
     transition: none;
 }
 
 .Subnav__item-hidden {
     display: none;
+}
+
+.Subnav__button {
+    align-items: center;
+    background: $clr-highlight;
+    border: none;
+    border-radius: 5px;
+    color: $clr-gray-95;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 1.0em;
+    text-shadow: 1px 1px darken($clr-highlight, 25%);
+    transition: $transition-hover;
+    width: 100%;
+
+    p {
+        margin: 0;
+        padding-top: 5px;
+    }
+
+    svg {
+        fill: $clr-gray-95;
+        height: 27px;
+        margin: 0 0.5em;
+        width: 27px;
+    }
+
+    &:hover {
+        background: lighten($clr-highlight, 3%);
+        color: $clr-white;
+
+        svg {
+            fill: $clr-white;
+        }
+    }
+}
+
+.ProjectDetails {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .ProjectDetails__inputs {
+        flex: 1;
+    }
+
+    .ProjectDetails__export {
+        text-align: right;
+    }
 }
