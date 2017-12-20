@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../../../state/project/actions';
+import ExportButton from '../ExportButton';
 
 
 class ProjectDetails extends Component {
@@ -59,10 +60,7 @@ class ProjectDetails extends Component {
                     </div>
                 </div>
                 <div className="ProjectDetails__export">
-                    <button className="Subnav__button">
-                        <svg><use xlinkHref="images/fa/solid.svg#share-square"></use></svg>
-                        <p>Export SVG</p>
-                    </button>
+                    <ExportButton />
                 </div>
             </div>
         );

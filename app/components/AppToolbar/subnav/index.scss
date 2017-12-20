@@ -42,6 +42,10 @@
         width: 27px;
     }
 
+    &:focus {
+        outline: none;
+    }
+
     &:hover {
         background: lighten($clr-highlight, 3%);
         color: $clr-white;
