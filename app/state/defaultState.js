@@ -1,15 +1,15 @@
 export default {
     basemap: {
-        mapId: 'usa-states',
+        mapId: 'usa-oh',
         resolution: 'medium',
         fillColor: '#b1e5d9',
         strokeColor: '#000000',
         strokeWidth: 1
     },
     data: {
-        //filepath: null,
+        filepath: null,
         //filepath: '/Users/michael/projects/maptop/app/data/datasets/skyline.oh.csv',
-        filepath: '/Users/michael/projects/maptop/app/data/datasets/aca-unemployment-rate.csv',
+        //filepath: '/Users/michael/projects/maptop/app/data/datasets/aca-unemployment-rate.csv',
         renderType: 'choropleth',
         dotConstrainToMap: true,
         dotRadius: 3,

@@ -71,7 +71,7 @@ class ExportButton extends Component {
         return (
             <button className="Subnav__button" onClick={this.exportSvg}>
                 { icon }
-                <p> Export SVG </p>
+                <p> Export as SVG </p>
             </button>
         );
     }

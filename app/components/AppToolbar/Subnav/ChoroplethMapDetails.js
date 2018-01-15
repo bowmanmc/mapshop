@@ -48,12 +48,18 @@ class ChoroplethMapDetails extends Component {
 
         const mapData = MapLoader.loadMap(basemap.mapId, basemap.resolution);
 
-        let cols = Object.keys(mapData.features[0].properties).sort();
+        let repFeature = mapData;
+        if (mapData.features && mapData.features.length > 0) {
+            repFeature = mapData.features[0];
+        }
+        console.log('Properties: ' + JSON.stringify(repFeature.properties));
+
+        let cols = Object.keys(repFeature.properties).sort();
         let matchColumns = [];
         cols.forEach(col => {
             matchColumns.push({
                 value: col,
-                label: `${col} (${mapData.features[0].properties[col]})`
+                label: `${col} (${repFeature.properties[col]})`
             });
         });
 
