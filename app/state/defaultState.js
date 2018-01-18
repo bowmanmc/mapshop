@@ -1,6 +1,6 @@
 export default {
     basemap: {
-        mapId: 'usa-oh',
+        mapId: 'usa-ak-counties',
         resolution: 'medium',
         fillColor: '#b1e5d9',
         strokeColor: '#000000',

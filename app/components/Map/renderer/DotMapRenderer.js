@@ -1,8 +1,6 @@
 import React from 'react';
 import fs from 'fs';
 
-import MapIndex from '../../../data/maps';
-
 import DataLoader from './DataLoader';
 import MapUtils from './MapUtils';
 

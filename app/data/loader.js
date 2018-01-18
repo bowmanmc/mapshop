@@ -12,7 +12,21 @@ export default {
         }
         const filepath = `${process.cwd()}/app/data/${details.files[resolution]}`;
         //console.log(`Loading ${filepath}`);
-        const data = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+        const filedata = JSON.parse(fs.readFileSync(filepath, 'utf8'));
+        let data = filedata;
+        if (details.selector && filedata.features) {
+            data = {
+                type: 'FeatureCollection',
+                features: []
+            };
+            console.log('Selecting out data with selector: ' + details.selector);
+            filedata.features.forEach(feature => {
+                if (feature.properties[details.selector.key] == details.selector.val) {
+                    data.features.push(feature);
+                }
+            });
+            console.log('Added ' + data.features.length + ' features...');
+        }
         return data;
     },
 
